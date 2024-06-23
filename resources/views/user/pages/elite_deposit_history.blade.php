@@ -1,0 +1,183 @@
+@extends('user.layouts.master')
+
+
+@section('user_content')
+    <div class="section-admin container-fluid">
+        <div class="row admin">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="admin-content res-mg-t-15 d-flex row justify-content-between">
+
+
+                    <div class="row page-top-section">
+                        <!-- breadcome title Section  -->
+                        <div class="col-sm-6 breadcome-heading">
+                            <h3>USDT Deposit History</h3>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class=" breadcome-price-section">
+                                <p class="breadcome-section-name">Available Balance:</p>
+                                <p class="breadcome-section-price">{{$data['sum_usd_wallet'] ? '$'.number_format((float)$data['sum_usd_wallet'], 2, '.', '') : '$00.00'}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row page-section-btn">
+                        <div class="col-sm-12">
+                            <button type="button" data-toggle="modal" data-target="#usdtDeposit" data-whatever=""  class="page-button">Pay Manually</button>
+                                <div class="modal withdraw-modal fade" id="usdtDeposit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title">USDT Pay Manually</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                              <div class="form-group">
+                                                <label for="selectUsdtDepositWalletMenu" class="col-form-label">Select Wallet</label>
+                                                <select class="form-select form-control" id="selectUsdtDepositWalletMenu" aria-label="Default select example" required onchange="UsdtDepositWalletMenu()">
+                                                  <option selected disabled>choose Wallet</option>
+                                                  <option value="dvvaergvSGDgawrg">dvvaergvSGDgawrg</option>
+                                                  <option value="sgrgwetgWEFWARG">sgrgwetgWEFWARG</option>
+                                                  <option value="eyahrwgawrtargaer">eyahrwgawrtargaer</option>
+                                                </select>
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="usdtDepositAddressMenu" class="col-form-label">Wallet Address</label>
+                                                  <input type="text" class="form-control" id="usdtDepositAddressMenu" readonly>
+                                                  <button class="copy-button" onclick="copyUsdtDepositWalletMenu(event)">
+                                                      <i class="fa-solid fa-copy copy-usdt-depo-wall-menu"></i>
+                                                          <i class="fa-solid fa-clipboard clipboard-usdt-depo-wall-menu text-warning"></i>
+                                                      </button>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="usdt-amount-deposit" class="col-form-label">Amount (USDT)</label>
+                                                  <input type="text" class="form-control" id="usdt-amount-deposit">
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="usdt-hash-deposit" class="col-form-label">Transaction Hash</label>
+                                                  <input type="text" class="form-control" id="usdt-hash-deposit">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                          <button type="button" class="btn btn-primary">Deposit</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="transection-staus mg-t-30  mg-b-30">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="transaction-status-wrap">
+
+                                        <div class="transaction-table">
+                                            <table id="myTable" class="">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">DATE</th>
+                                                        <th scope="col">AMOUNT</th>
+
+                                                        <th scope="col">DESCRIPTION</th>
+                                                        <th scope="col">TYPE</th>
+                                                        <th scope="col">Status</th>
+
+                                                    </tr>
+                                                </thead>
+
+
+                                                @foreach ($bonus as $row)
+                                                    <tr>
+                                                        <td id="text-purple">{{ $loop->index + 1 }}</td>
+
+                                                        <td id="text-purple">{{ $row->created_at }}</td>
+                                                        <td id="text-purple">
+
+                                                            {{ $row->amount }}USD
+
+                                                        </td>
+                                                        <td id="text-purple">{{ $row->description }}</td>
+                                                        <td id="text-purple">{{ $row->type }}</td>
+                                                        <td id="text-purple">{{ $row->status }}</td>
+
+
+
+                                                    </tr>
+                                                @endforeach
+
+
+
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- transection Token Wallet section
+        ============================================  -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    @push('scripts')
+        <script type="text/javascript">
+            document.getElementById('DestinationOptions_usd2').addEventListener('change', function(e) {
+                var wallet2 = e.target.options[e.target.selectedIndex].getAttribute('id');
+                //console.log(wallet2);
+                var wallet = document.getElementById("wallet_id_usd2").value = wallet2;
+                //console.log(wallet);
+                //wallet.innerHTML= wallet2;
+            });
+
+            //  document.getElementById('').value(id.value);
+        </script>
+
+        <script>
+            document.getElementById('DestinationOptions').addEventListener('change', function(e) {
+                var wallet2 = e.target.options[e.target.selectedIndex].getAttribute('id');
+                console.log(wallet2);
+                var wallet = document.getElementById("wallet_id").value = wallet2;
+                //console.log(wallet);
+                //wallet.innerHTML= wallet2;
+            });
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $('#myTable').DataTable();
+            });
+            $(document).ready(function() {
+                $('#myTable1').DataTable();
+            });
+            $(document).ready(function() {
+                $('#myTable2').DataTable();
+            });
+            $(document).ready(function() {
+                $('#myTable3').DataTable();
+            });
+            $(document).ready(function() {
+                $('#myTable4').DataTable();
+            });
+        </script>
+    @endpush
+@endsection
