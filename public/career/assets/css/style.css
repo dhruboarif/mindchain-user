@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    /*background-image: url("{{ URL::asset('/career/assets/image/tecture.png' }}");*/
+    background-repeat: repeat;
+}
+/* custom color  */
+.text-purple{
+    color: #290059;
+}
+
+.primary-bg{
+    background: linear-gradient(350deg, #DBCAEF, #290059, #DBCAEF);
+}
+.primary-bg1{
+    background: linear-gradient(-45deg, #DBCAEF, #290059, #DBCAEF);
+}
+.secondary-bg{
+    background: linear-gradient(to bottom, #747474, #0E0E0E);
+}
+.mt--20{
+    margin-top:20px;
+}
+.mt--60{
+    margin-top: 60px;
+}
+.mt--90{
+    margin-top: 90px;
+}
+.mb--20{
+    margin-bottom: 20px;
+}
+.mb--40{
+    margin-bottom: 40px;
+}
+.mb--60{
+    margin-bottom: 60px;
+}
+.mb--120{
+    margin-bottom: 120px;
+}
+.ml{
+    padding: 25px 70px;
+}
+.pr--20{
+    padding-right: 20px;
+}
+.pb--50{
+    padding-bottom: 50px;
+}
+.pb--45{
+    padding-bottom: 45px;
+}
+.f-size-40{
+    font-size: 30px;
+}
+.rounded-pill{
+    width: 70%;
+    font-size: 18px;
+    background-color: #290059;
+    border: none;
+    color: white;
+}
+.rounded-pill:hover{
+    background-color: #cb9eff;
+    color: #290059;
+}
+.r-title{
+    width: 65%;
+    margin: auto;
+}
+.card{
+    border: none;
+}
+.r-card{
+    display: flex;
+}
+.img-card .img-fluid{
+    display: flex;
+    margin: 30px 25px;
+
+}
+.card-body{
+    width: 80%;
+}
+.icon{
+    color:#d1a8ff;
+}
+span{
+    font-size:large;
+    font-weight: 500;
+}
+.newsletter{
+    background: linear-gradient(45deg, #DBCAEF, #290059);
+}
+#openButton{
+    background-color: #DBCAEF;
+    color: #290059 ;
+    float: right;
+    margin: 50px 40px;
+    width: 50%;
+    border: none;
+}
+#openButton:hover {
+    color: #DBCAEF;
+    border: 2px solid #DBCAEF;
+    background: none;
+}
+.float-end span{
+    background: none;
+}
+/* Styles for the popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+/* Styles for the form container */
+.popup-content {
+    background-color: #DBCAEF;;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the close button */
+.close {
+    position: absolute;
+    top: 5px;
+    right: 18px;
+    cursor: pointer;
+}
+.popup-content iframe{
+    width: 680px;
+    height: 500px;
+}
+/* social media section css  */
+.join-cmnty .btn{
+    margin: 0 15px;
+}
+.join-cmnty .btn:hover{
+    box-shadow: 1px 2px 5px #6200d1;
+}

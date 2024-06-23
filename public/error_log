@@ -1,0 +1,17 @@
+[23-Jun-2024 14:01:33 UTC] PHP Fatal error:  Uncaught ErrorException: include(): Failed opening '/home/edulifeb/user.mindchainwallet.com/vendor/composer/../laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php' for inclusion (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/edulifeb/user.mindchainwallet.com/vendor/composer/ClassLoader.php:576
+Stack trace:
+#0 /home/edulifeb/user.mindchainwallet.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(270): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(): Fail...', '/home/edulifeb/...', 576)
+#1 /home/edulifeb/user.mindchainwallet.com/vendor/composer/ClassLoader.php(576): Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}(2, 'include(): Fail...', '/home/edulifeb/...', 576)
+#2 /home/edulifeb/user.mindchainwallet.com/vendor/composer/ClassLoader.php(576): include()
+#3 /home/edulifeb/user.mindchainwallet.com/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/edulifeb/...')
+#4 /home/edulifeb/user.mindchainwallet.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(642): Composer\Autoload\ClassLoader->loadClass('Illuminate\\Foun...')
+#5 /home/edulifeb/user.mindchainwallet.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(623): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#6 /home/edulifeb/user.mindchainwallet.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(554): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#7 /home/edulifeb/user.mindchainwallet.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(460): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#8 /home/edulifeb/user.mindchainwallet.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(377): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse(Object(Illuminate\Http\Request), Object(ErrorException))
+#9 /home/edulifeb/user.mindchainwallet.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(233): Illuminate\Foundation\Exceptions\Handler->render(Object(Illuminate\Http\Request), Object(ErrorException))
+#10 /home/edulifeb/user.mindchainwallet.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(210): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(ErrorException))
+#11 /home/edulifeb/user.mindchainwallet.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(270): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(ErrorException))
+#12 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}(Object(ErrorException))
+#13 {main}
+  thrown in /home/edulifeb/user.mindchainwallet.com/vendor/composer/ClassLoader.php on line 576

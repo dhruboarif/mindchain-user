@@ -1,0 +1,92 @@
+
+*{
+    font-family: 'montserrat';
+}
+.text-purple{
+    color: #290059;
+}
+#bg-img{
+    background-repeat: repeat;
+}
+#ambassador-breadcumb{
+    background: linear-gradient(to bottom, #747474, #0E0E0E);
+}
+.become-ambassdor, .become-ambassdor .content-area{
+    margin:  10px 0;
+}
+.section1 .image-area{
+    margin-left:40px;
+}
+.section1 .image-area , .section1 .content-area{
+    border-radius: 5px;
+    background: linear-gradient(-45deg, #DBCAEF, #290059, #DBCAEF);
+    box-shadow: 1px 2px 8px #290059;
+}
+
+.section1 .content-area ul li{
+    list-style-type: none;
+    font-size: 18px;
+    list-style-position: outsite;
+}
+.content-area ul li span, .listing-area ul li span{
+    padding-left: 20px;
+}
+.ambassador-benefit .listing-area {
+    font-size: 18px;
+}
+.ambassador-benefit .listing-area ul li{
+    list-style-type: none;
+    padding: 3px 0;
+    font-size: 17px;
+    list-style-position: inside;
+}
+.ambassador-benefit .listing-area{
+    border-radius: 5px;
+    background: linear-gradient(-45deg, #DBCAEF, #290059, #DBCAEF);
+    box-shadow: 1px 2px 8px #290059;
+}
+.htb-ambassador .condition-area{
+    padding: 20px 30px;
+    border-radius: 5px;
+    background: linear-gradient(-45deg, #DBCAEF, #290059, #DBCAEF);
+    box-shadow: 1px 2px 8px #290059;
+}
+.htb-ambassador .condition-area{
+    font-size: 18px;
+}
+.htb-ambassador h4 span{
+    padding-left: 3px;
+}
+.htb-ambassador .button{
+    background: linear-gradient(to bottom, #747474, #0E0E0E);
+    /* background-color: #290059; */
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition-duration: .5s;
+}
+.htb-ambassador .button:hover{
+    background: #290059;
+    box-shadow: 1px 2px 8px #DBCAEF;
+    
+}
+/* .htb-ambassador .sell:hover{
+    background: linear-gradient(to top, #747474, #0E0E0E);
+    box-shadow: 2px 3px 5px #000000;
+    
+} */
+.htb-ambassador .or{
+    margin-top: 30px;
+    font-size: 50px;
+    color: #290059;
+}
+.join-cmnty .btn{
+    margin: 0 15px;
+}
+.join-cmnty .btn:hover{
+    box-shadow: 1px 2px 5px rgb(255, 2255, 29);
+}
+.become-ambassdor, .ambassador-benefit, .htb-ambassador{
+    border-bottom: 1px solid #290059;
+
+}
