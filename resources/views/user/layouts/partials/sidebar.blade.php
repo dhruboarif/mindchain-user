@@ -4,13 +4,13 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="#"><img src="{{ asset('assetsnew/img/logo/logo.png') }}" alt="" class="main-logo img-fluid" /></a>
+                <a href="{{route('home')}}"><img src="{{ asset('assetsnew/img/logo/logo.png') }}" alt="" class="main-logo img-fluid" /></a>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active click-active">
-                            <a class="" href="index.html"><svg class="icon-wrap" width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <a class="" href="{{route('home')}}"><svg class="icon-wrap" width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.5 1.1875C9.78125 0.96875 10.1875 0.96875 10.4688 1.1875L18.7188 8.1875C19.0312 8.46875 19.0938 8.9375 18.8125 9.25C18.5312 9.5625 18.0625 9.59375 17.75 9.34375L17 8.6875V14.5C17 15.9062 15.875 17 14.5 17H5.5C4.09375 17 3 15.9062 3 14.5V8.6875L2.21875 9.34375C1.90625 9.59375 1.4375 9.5625 1.15625 9.25C0.90625 8.9375 0.9375 8.46875 1.25 8.1875L9.5 1.1875ZM10 2.75L4.5 7.40625V14.5C4.5 15.0625 4.9375 15.5 5.5 15.5H14.5C15.0312 15.5 15.5 15.0625 15.5 14.5V7.40625L10 2.75ZM9 10H11V8H9V10ZM7.5 7.75C7.5 7.0625 8.03125 6.5 8.75 6.5H11.25C11.9375 6.5 12.5 7.0625 12.5 7.75V10.25C12.5 10.9688 11.9375 11.5 11.25 11.5H8.75C8.03125 11.5 7.5 10.9688 7.5 10.25V7.75Z" fill="white"/>
                                 </svg>                                
 								   <span class="mini-click-non sidebar-title text-capitalize">Dashboard</span>
@@ -63,18 +63,6 @@
                         </li>
 
                         
-
-                        <li class="click-active">
-                            <a class="has-arrow" href="#" aria-expanded="false"> <svg class="icon-wrap" width="22" height="22" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.1853 1.07806C13.3178 1.18743 12.4854 1.49212 11.7625 1.97259C11.3873 2.22259 10.6253 2.98431 10.3752 3.35931C9.97661 3.96087 9.69915 4.62884 9.54675 5.35149C9.45296 5.81243 9.45296 6.84368 9.54675 7.30462C9.77731 8.40227 10.2267 9.24212 11.0005 10.0234C11.7859 10.8163 12.6495 11.2812 13.7555 11.5116C14.1697 11.5976 15.2013 11.6054 15.6312 11.5273C15.7914 11.4999 16.1353 11.4062 16.3893 11.3241C17.2021 11.0585 17.7844 10.6952 18.4292 10.0585C19.2186 9.28118 19.6875 8.41399 19.9181 7.30462C20.0118 6.84368 20.0118 5.81243 19.9181 5.35149C19.6875 4.24212 19.2381 3.41009 18.4448 2.61321C17.6711 1.83587 16.7957 1.36321 15.7445 1.15227C15.4553 1.09368 14.4471 1.04681 14.1853 1.07806ZM15.6703 2.33587C16.444 2.53899 17.0966 2.90618 17.6281 3.43352C18.1556 3.96087 18.5112 4.59368 18.7301 5.39056C18.8434 5.81634 18.8434 6.83977 18.7301 7.26556C18.5034 8.08977 18.1439 8.71087 17.5851 9.25774C17.0341 9.79681 16.3424 10.1679 15.5726 10.3437C15.1584 10.4374 14.1814 10.4257 13.7945 10.3202C13.0012 10.1054 12.3682 9.74993 11.8367 9.22259C11.3092 8.69524 10.9536 8.05852 10.7386 7.26556C10.6136 6.81634 10.6175 5.85149 10.7425 5.37493C11.1372 3.8554 12.2822 2.71087 13.7594 2.35149C14.2088 2.23821 14.2869 2.2304 14.8692 2.24602C15.2092 2.25774 15.4749 2.28509 15.6703 2.33587Z" fill="#B4B4B4"/>
-                                </svg>
-                                <span class="mini-click-non text-capitalize sidebar-title">Earn MIND</span></a>
-                          <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="" href="/home/elite-deposit-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Mind Staking</span></a></li>
-                                <li><a title="" href=""><span class="mini-sub-pro">View Mail</span></a></li>
-                                <li><a title="" href=""><span class="mini-sub-pro">Compose Mail</span></a></li>
-                            </ul> 
-                        </li>
 
                         <li class="click-active">
                             <a class="" href="#" aria-expanded="false">
@@ -145,8 +133,19 @@
                                 <span class="mini-click-non text-capitalize sidebar-title">B.W Trans. history</span></a>
                           <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="" href="/home/elite-deposit-history/{{Auth::user()->id}}"><span class="mini-sub-pro">USDT Deposit History</span></a></li>
-                                <li><a title="" href=""><span class="mini-sub-pro">View Mail</span></a></li>
-                                <li><a title="" href=""><span class="mini-sub-pro">Compose Mail</span></a></li>
+                            <li><a title="" href="/home/elite-sponsor-bonus-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Elite Sponsor Bonus History</span></a></li>
+                            <li><a title="" href="/home/usd-staking-bonus-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Elite Daily Bonus History</span></a></li>
+                            <li><a title="" href="/home/affilate-bonus-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Affiliate Bonus History</span></a></li>
+                            <li><a title="" href="/home/refferer-bonus-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Daily Seller Bonus History</span></a></li>
+                            <li><a title="" href="/home/daily-bonus-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Daily  Bonus History</span></a></li>
+                            <li><a title="" href="/home/staking-bonus-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Staking Bonus History</span></a></li>
+                            <li><a title="" href="/home/level-bonus-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Level Bonus History</span></a></li>
+
+                            <li><a title="" href="/home/token-settlement-bonus-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Token Sett. History</span></a></li>
+                            <li><a title="" href="/home/transfer-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Transfer History</span></a></li>
+                            <li><a title="" href="/home/withdraw-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Withdraw History</span></a></li>
+                            <li><a title="" href="/home/other-transaction-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Other Transaction</span></a></li>
+                            </ul> 
                             </ul> 
                         </li>
 

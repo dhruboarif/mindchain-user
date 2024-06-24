@@ -34,19 +34,26 @@
                                           </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form>
+                                            <form method="post" action="{{route('money-store-elite')}}">
+                                                @csrf
+                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                                               <div class="form-group">
+                                                <?php
+                                                    $account_info = App\Models\AccountInfo::whereIn('payment_type_id', [5, 6])->get();
+
+                                                ?>
                                                 <label for="selectUsdtDepositWalletMenu" class="col-form-label">Select Wallet</label>
-                                                <select class="form-select form-control" id="selectUsdtDepositWalletMenu" aria-label="Default select example" required onchange="UsdtDepositWalletMenu()">
+                                                <select class="form-select form-control" id="DestinationOptions_usd2" name="payment_wallet_id"  aria-label="Default select example" required onchange="UsdtDepositWalletMenu()">
                                                   <option selected disabled>choose Wallet</option>
-                                                  <option value="dvvaergvSGDgawrg">dvvaergvSGDgawrg</option>
-                                                  <option value="sgrgwetgWEFWARG">sgrgwetgWEFWARG</option>
-                                                  <option value="eyahrwgawrtargaer">eyahrwgawrtargaer</option>
+                                                  @foreach($account_info as $payment)
+
+                                                <option id="{{$payment->wallet_no}}" value="{{$payment->id}}">{{$payment->payment_way->payment_way}} </option>
+                                                @endforeach
                                                 </select>
                                               </div>
                                               <div class="form-group">
                                                   <label for="usdtDepositAddressMenu" class="col-form-label">Wallet Address</label>
-                                                  <input type="text" class="form-control" id="usdtDepositAddressMenu" readonly>
+                                                  <input type="text" class="form-control" name="wallet_id2" disabled id="wallet_id_usd2" readonly>
                                                   <button class="copy-button" onclick="copyUsdtDepositWalletMenu(event)">
                                                       <i class="fa-solid fa-copy copy-usdt-depo-wall-menu"></i>
                                                           <i class="fa-solid fa-clipboard clipboard-usdt-depo-wall-menu text-warning"></i>
@@ -54,18 +61,19 @@
                                                 </div>
                                                 <div class="form-group">
                                                   <label for="usdt-amount-deposit" class="col-form-label">Amount (USDT)</label>
-                                                  <input type="text" class="form-control" id="usdt-amount-deposit">
+                                                  <input type="text" class="form-control" name="amount" id="usdt-amount-deposit">
                                                 </div>
                                                 <div class="form-group">
                                                   <label for="usdt-hash-deposit" class="col-form-label">Transaction Hash</label>
-                                                  <input type="text" class="form-control" id="usdt-hash-deposit">
+                                                  <input type="text" class="form-control" id="usdt-hash-deposit" name="txn_id">
                                                 </div>
-                                            </form>
                                         </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                          <button type="button" class="btn btn-primary">Deposit</button>
+                                          <button type="submit" class="btn btn-primary">Deposit</button>
                                         </div>
+                                    </form>
+
                                       </div>
                                     </div>
                                 </div>
@@ -162,22 +170,6 @@
             });
         </script>
 
-        <script>
-            $(document).ready(function() {
-                $('#myTable').DataTable();
-            });
-            $(document).ready(function() {
-                $('#myTable1').DataTable();
-            });
-            $(document).ready(function() {
-                $('#myTable2').DataTable();
-            });
-            $(document).ready(function() {
-                $('#myTable3').DataTable();
-            });
-            $(document).ready(function() {
-                $('#myTable4').DataTable();
-            });
-        </script>
+   
     @endpush
 @endsection
