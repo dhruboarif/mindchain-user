@@ -2,87 +2,111 @@
 
 
 @section('user_content')
+    <div class="section-admin container-fluid">
+        <div class="row admin">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="admin-content res-mg-t-15 d-flex row justify-content-between">
 
 
+                    <div class="row page-top-section">
+                        <!-- breadcome title Section  -->
+                        <div class="col-sm-6 breadcome-heading">
+                            <h3>Other History</h3>
+                        </div>
+                    </div>
 
-   <div class="bd-example">
-            <div class="row  row-cols-1 row-cols-md-1 g-4">
-
-                <div class="col">
                     
-       
 
-                    <div class="card-body" id="text-purple">
-                        <h2 class="card-title" id="text-purple">Other History</h2>
+                    <div class="transection-staus mg-t-30  mg-b-30">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="transaction-status-wrap">
 
+                                        <div class="transaction-table">
+                                            <table id="myTable" class="">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">DATE</th>
+                                                        <th scope="col">AMOUNT</th>
 
+                                                        <th scope="col">DESCRIPTION</th>
+                                                        <th scope="col">TYPE</th>
+                                                        <th scope="col">Status</th>
 
-
-                          <hr>
-                        <div class="bd-example">
-         
-         
-                  <div class="bd-example table-responsive">
-                         <table id="myTable" class="table table-bordered table-border">
-                             <thead>
-                                 <tr>
-                                     <th scope="col">#</th>
-                                     <th scope="col">DATE</th>
-                                       <th scope="col">AMOUNT</th>
-                                        
-                                    <th scope="col">DESCRIPTION</th>
-                                               
-                                     <th scope="col">TYPE</th>
-                                     <th scope="col">STATUS</th>
-
-                                 </tr>
-                             </thead>
+                                                    </tr>
+                                                </thead>
 
 
-                            @foreach($bonus as $row)
-                                 <tr>
-                                    <td id="text-purple">{{$loop->index+1}}</td>
-                                     
-                                     <td id="text-purple">{{$row->created_at}}</td>
-                                     <td id="text-purple">
-                                       
-                                        {{$row->amount}}MIND
+                                                @foreach ($bonus as $row)
+                                                    <tr>
+                                                        <td id="text-purple">{{ $loop->index + 1 }}</td>
 
-                                     </td>
-                                     <td id="text-purple">{{$row->description}}</td>
-                                     <td id="text-purple">{{$row->type}}</td>
-                                      <td id="text-purple">{{$row->status}}</td>
-                                     
+                                                        <td id="text-purple">{{ $row->created_at }}</td>
+                                                        <td id="text-purple">
+
+                                                            {{ $row->amount }}USD
+
+                                                        </td>
+                                                        <td id="text-purple">{{ $row->description }}</td>
+                                                        <td id="text-purple">{{ $row->type }}</td>
+                                                        <td id="text-purple">{{ $row->status }}</td>
 
 
-                                 </tr>
-                                 @endforeach
-                                
+
+                                                    </tr>
+                                                @endforeach
 
 
 
 
-                             </tbody>
-                         </table>
-                     </div>
 
-                  </p>
+                                                </tbody>
+                                            </table>
+                                        </div>
 
-              
-              
-
-          </div>
-      </div>
-
-
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    </div>
+                    <!-- transection Token Wallet section
+        ============================================  -->
                 </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
 
-           
 
+    @push('scripts')
+        <script type="text/javascript">
+            document.getElementById('DestinationOptions_usd2').addEventListener('change', function(e) {
+                var wallet2 = e.target.options[e.target.selectedIndex].getAttribute('id');
+                //console.log(wallet2);
+                var wallet = document.getElementById("wallet_id_usd2").value = wallet2;
+                //console.log(wallet);
+                //wallet.innerHTML= wallet2;
+            });
 
+            //  document.getElementById('').value(id.value);
+        </script>
 
+        <script>
+            document.getElementById('DestinationOptions').addEventListener('change', function(e) {
+                var wallet2 = e.target.options[e.target.selectedIndex].getAttribute('id');
+                console.log(wallet2);
+                var wallet = document.getElementById("wallet_id").value = wallet2;
+                //console.log(wallet);
+                //wallet.innerHTML= wallet2;
+            });
+        </script>
+
+   
+    @endpush
 @endsection

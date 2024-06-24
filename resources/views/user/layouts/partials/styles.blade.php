@@ -54,6 +54,8 @@ $company =App\Models\Company::first();
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="{{asset('assetsnew/style.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/css/libs.min.css')}}">
+
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="{{asset('assetsnew/css/responsive.css') }}">
