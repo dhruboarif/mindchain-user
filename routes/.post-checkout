@@ -1,0 +1,4 @@
+#!/bin/sh
+# Custom script to ignore changes in config and bootstrap folders
+git checkout -- config/
+git checkout -- bootstrap/
