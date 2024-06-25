@@ -1,302 +1,210 @@
- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Log In / Sign Up</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css">
-     <!-- Fontawsome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="{{asset('new-login/style.css')}}" />
-    <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/sweetalert2-bootstrap-4.min.css') }}">
-  <link rel="stylesheet" href="{{asset('pop-up/style.css')}}">
+<!doctype html>
+<html class="no-js" lang="en">
 
-    <meta name="csrf-token" content="{{ csrf_token() }}"/>
-  </head>
-  <body>
-      @include('sweetalert::alert')
-    <!-- partial Start-->
-    <div class="section">
-      <div class="container">
-          @if(session('user_added'))
-    <div class="alert alert-success">
-        {{ session('user_added') }}
-    </div>
-@endif
-        <div id="video-background">
-        <!-- Video Library -->
-      <video onload="this.play();" autoplay loop muted>
-        <source src="{{asset('assets/images/bg-video.mp4')}}" type="video/mp4"  codecs="avc1.4D401E, mp4.40.2">
-      </video>
-    </div>
-        <div class="row full-height justify-content-center">
-          <div class="col-12 text-center align-self-center py-5">
-              <img class="logo-mind mb-2" src="{{asset('new-login/Mindchain.png')}}" alt="Mindchain"> <br>
-               <button type="submit" class="btn btn-success mt-2 mb-4"><a href="https://www.mindchainwallet.com">GO HOME</a></button>
-            <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                <form id="stripe-login" method="POST" action="{{ route('login') }}">
-                @csrf
-                     
-              <h6 class="mb-0 pb-3">
-                <span>Log In </span><span>Sign Up</span>
-              </h6>
-              
-              <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
-              <label for="reg-log"></label>
-              <div class="card-3d-wrap mx-auto">
-                <div class="card-3d-wrapper">
-                  <div class="card-front">
-                    <div class="center-wrap">
-                      <div class="section text-center">
-                           @if (session('error'))
-                           <div style="color:green;">
-                                {!! session('error') !!}
-                           </div>
-                        @endif
-                       
-                        <h4 class="mb-4 pb-3">Log In</h4>
-                        
-                        <p>Please input your valid username and password to login your Mindchain Wallet. </p>
-                       
-                        <div class="form-group">
-                          <input type="text" name="user_name" class="form-style @error('user_name') is-invalid @enderror" placeholder="Your Username" id="loginname" autocomplete="off" />
-                          <i class="input-icon uil uil-user"></i>
-                        </div>
-                        @error('user_name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                        <div class="form-group d-flex mt-2">
-                          <input class="form-style @error('password') is-invalid @enderror" type="password" name="password" placeholder="Your Password" autocomplete="current-password" required="" id="id_password"><i class="far fa-eye" id="togglePassword"></i>
-                          <i class="input-icon uil uil-lock-alt"></i>
-                        </div>
-                         @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                        <button type="submit" class="btn mt-4">submit</button>
-                        </form>
-                        <p class="mb-0 mt-4 text-center">
-                            @if (Route::has('password.request'))
-                          <a href="{{ route('password.request') }}" class="link">Forgot your password?</a>
-                          @endif
-                          <!--<a href="reset.html" class="link">Forgot your password?</a>-->
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="card-back">
-                    <div class="center-wrap">
-                      <div class="section text-center">
-                          <form method="POST" action="{{route('registration')}}">
-                    @csrf
-                        <h4 class="mb-4 pb-2">Sign Up</h4>
-                        <div id="errorMessages" class="alert alert-danger" style="display: none;"></div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MindChain Wallet</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+     <!-- font awsome cdn icon
+		============================================ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css')}}"/>
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/bootstrap.min.css')}}">
+    <!-- Bootstrap CSS
+		============================================ -->
+    {{-- <link rel="stylesheet" href="{{asset('assetsnew/css/font-awesome.min.css')}}"> --}}
+	<!-- nalika Icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/nalika-icon.css')}}">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('assetsnew/css/owl.theme.css')}}">
+    <link rel="stylesheet" href="{{asset('assetsnew/css/owl.transitions.css')}}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/animate.css')}}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/normalize.css')}}">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/meanmenu.min.css')}}">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/main.css')}}">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/morrisjs/morris.css')}}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/metisMenu/metisMenu.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assetsnew/css/metisMenu/metisMenu-vertical.css')}}">
+    <!-- calendar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/calendar/fullcalendar.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assetsnew/css/calendar/fullcalendar.print.min.css')}}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/style.css')}}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('assetsnew/css/responsive.css')}}">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+</head>
 
-                        <div class="form-group">
-                          <input type="text" name="user_name" class="form-style @error('user_name') is-invalid @enderror" placeholder="User Name" id="logname" autocomplete="off" />
-                          <i class="input-icon uil uil-user"></i>
+<body>
+    <div class="container-fluid">
+        <div class="authinatication">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 auth-left-side ">
+                    <div class="auth-img-sec auth-left-sign-in">
+                        <div class="side-image">
+                            <img src="assetsnew/img/background/bg-image.png" alt="">
                         </div>
-                        @error('user_name')
-                                           <span class="alert alert-danger" role="alert">
-                                               {{ $message }}
-                                           </span>
-                                       @enderror
-                        <div class="form-group mt-2">
-                          <input type="email" name="email" class="form-style @error('email') is-invalid @enderror" placeholder="Your Email" id="logemail" autocomplete="off" />
-                          <i class="input-icon uil uil-at"></i>
+                        <div class="social-icons">
+                            <ul>
+                                <li><a href="https://www.facebook.com/mindchain.info"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://twitter.com/MindChain1"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCogQYyfu7ista6L1X8SQluw"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                                <li><a href="https://t.me/mindchainMIND"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a></li>
+                                
+                                <li><a href="https://discord.com/channels/910149384858136587/910149385302720513"><i class="fab fa-discord" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.reddit.com/user/Mindchainswap"><i class="fab fa-reddit-alien" aria-hidden="true"></i></a></li>
+                                <li><a href="https://medium.com/@mindchain"><i class="fab fa-medium-m" aria-hidden="true"></i></a></li>
+                              </ul>
                         </div>
-                        @error('email')
-                                           <span class="alert alert-danger" role="alert">
-                                              {{ $message }}
-                                           </span>
-                                       @enderror
-                                       
-                          @if(isset($_GET['ref']))
-                    @php 
-                    $key= App\Models\User::where('key_id',$_GET['ref'])->first();
-                    if($key == null)
-                    {
-                    $key_id= $_GET['ref'];
-                    }else
-                    {
-                    $key_id= $key->user_name;
-                    }
-                    
-                    @endphp               
-                        <div class="form-group d-flex mt-2">
-                          <input type="text" value="{{$key_id}}" name="sponsor" id="sponsor" class="form-style" placeholder="Sponsor"  autocomplete="off" />
-                          <i class="input-icon uil uil-game-structure"></i>
-                          
-                        </div>
-                         <div id="suggestUser"></div>
-                        
-                        @else 
-                        <div class="form-group d-flex mt-2">
-                          <input type="text" name="sponsor" id="sponsor" class="form-style" placeholder="Sponsor"  autocomplete="off" />
-                          <i class="input-icon uil uil-game-structure"></i>
-                           
-                        </div>
-                        <div id="suggestUser"></div>
-                        
-                        
-                        
-                        
-                        @endif
-                        <div class="form-group mt-2">
-                          <input type="password" name="password" class="form-style @error('password') is-invalid @enderror" placeholder="Your Password" id="logpass" autocomplete="off" />
-                          <i class="input-icon uil uil-lock-alt"></i>
-                        </div>
-                         @error('password')
-                                           <span class="alert alert-danger" role="alert">
-                                               {{ $message }}
-                                           </span>
-                                       @enderror
-                      <div class="form-group mt-2">
-                          <input type="password" id="password-confirm" type="password" name="password_confirmation" class="form-style" placeholder="Password Confirm" autocomplete="off" />
-                          <i class="input-icon uil uil-lock-alt"></i>
-                        </div>
-                        <button type="submit" class="btn mt-4">submit</button>
-                      </div>
-                      </form>
                     </div>
-                  </div>
                 </div>
-              </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="auth-data auth-sign-in">
+                        <div class="auth-logo-sec">
+                            <img src="assetsnew/img/logo/logo.png" alt="">
+                        </div>
+                        <div class="auth-heading mg-b-30">
+                            <h5>Welcome To Mindchain</h5>
+                            <p class="signin-content">Please input your valid username and password to login your Mindchain Wallet.</p>
+                        </div>
+                        <form id="stripe-login" method="POST" action="{{ route('login') }}">
+                          @csrf
+                          @if (session('error'))
+                          <div style="color:green;">
+                               {!! session('error') !!}
+                          </div>
+                       @endif
+                            <div class="form-group">
+                                <label for="userName" class="col-form-label">Username <span>*</span></label>
+                                <input type="text" class="form-control" name="user_name" autocomplete="off" id="loginname" placeholder="Enter Your Username" required>
+                                <svg width="18" height="20" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.625 11.75C7.64844 11.75 5.84375 10.7188 4.85547 9C3.86719 7.32422 3.86719 5.21875 4.85547 3.5C5.84375 1.82422 7.64844 0.75 9.625 0.75C11.5586 0.75 13.3633 1.82422 14.3516 3.5C15.3398 5.21875 15.3398 7.32422 14.3516 9C13.3633 10.7188 11.5586 11.75 9.625 11.75ZM7.64844 13.8125H11.5586C15.8125 13.8125 19.25 17.25 19.25 21.5039C19.25 22.1914 18.6484 22.75 17.9609 22.75H1.24609C0.558594 22.75 0 22.1914 0 21.5039C0 17.25 3.39453 13.8125 7.64844 13.8125Z" fill="white"/>
+                                    </svg>
+                              </div>
+                 
+                              <div class="form-group">
+                                <label for="password" class="col-form-label">Password <span>*</span></label>
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Enter Your Password" autocomplete="current-password" required>
+                                <svg width="18" height="20" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.1875 6.9375V9H13.0625V6.9375C13.0625 5.04688 11.5156 3.5 9.625 3.5C7.69141 3.5 6.1875 5.04688 6.1875 6.9375ZM3.4375 9V6.9375C3.4375 3.54297 6.1875 0.75 9.625 0.75C13.0195 0.75 15.8125 3.54297 15.8125 6.9375V9H16.5C18.0039 9 19.25 10.2461 19.25 11.75V20C19.25 21.5469 18.0039 22.75 16.5 22.75H2.75C1.20312 22.75 0 21.5469 0 20V11.75C0 10.2461 1.20312 9 2.75 9H3.4375Z" fill="white"/>
+                                    </svg>
+                              </div>
+                              
+                              <p class="text-right forget-password"><a href="forget-password.html">Forget Password?</a></p>
+                              <button type="submit">Sign In</button>
+                        </form>
+                        
+                        <p class="mg-t-15">Don't have an account? <a href="signup.html">Sign Up For Free</a></p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="social-container mt-4">
-            <ul>
-            <li><a href="https://www.facebook.com/mindchain.info"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-            <li><a href="https://twitter.com/MindChain1"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.youtube.com/channel/UCogQYyfu7ista6L1X8SQluw"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
-            <li><a href="https://t.me/mindchainMIND"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a></li>
-            {{-- <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li> --}}
-            <li><a href="https://discord.com/channels/910149384858136587/910149385302720513"><i class="fab fa-discord" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.reddit.com/user/Mindchainswap"><i class="fab fa-reddit-alien" aria-hidden="true"></i></a></li>
-            <li><a href="https://medium.com/@mindchain"><i class="fab fa-medium-m" aria-hidden="true"></i></a></li>
-          </ul>
-        </div>
-            
-        </div>
-      </div>
+    
     </div>
-    
-    <!-- pop up start -->
-    
-  
-<!-- pop-up end -->
-    {{-- @error('user_name')
-                                           <span class="alert alert-danger" role="alert">
-                                               {{ $message }}
-                                           </span>
-                                       @enderror
-                                       <br>
-                                        @error('email')
-                                           <span class="alert alert-danger" role="alert">
-                                               {{ $message }}
-                                           </span>
-                                       @enderror
-                                       <br>
-                                        @error('password')
-                                           <span class="alert alert-danger" role="alert">
-                                               {{ $message }}
-                                           </span>
-                                       @enderror --}}
-    <!-- partial -->
-        <script src="{{asset('assets/js/libs.min.js')}}"></script>
-    <!-- widgetchart JavaScript -->
-    <script src="{{asset('assets/js/charts/widgetcharts.js')}}"></script>
-    <!-- fslightbox JavaScript -->
-    <script src="{{asset('assets/js/fslightbox.js')}}"></script>
-    <!-- app JavaScript -->
-    <script src="{{asset('assets/js/app.js')}}"></script>
-    <!-- apexchart JavaScript -->
-    <script src="{{asset('assets/js/charts/apexcharts.js')}}"></script>
+
+
+
+
+    <!-- jquery
+		============================================ -->
+    <script src="{{asset('assetsnew/js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/bootstrap.min.js')}}"></script>
+    <!-- wow JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/wow.min.js')}}"></script>
+    <!-- price-slider JS
+		============================================ -->
+        
+	<script src="{{asset('assetsnew/js/countdown-timer.js')}}"></script>
+    <!-- Timer counter js file
+    ============================================ -->
+    <script src="{{asset('assetsnew/js/jquery-price-slider.js')}}"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/jquery.meanmenu.js')}}"></script>
+    <!-- owl.carousel JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/owl.carousel.min.js')}}"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/jquery.sticky.js')}}"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/jquery.scrollUp.min.js')}}"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="{{asset('assetsnew/js/scrollbar/mCustomScrollbar-active.js')}}"></script>
+    <!-- metisMenu JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/metisMenu/metisMenu.min.js')}}"></script>
+    <script src="{{asset('assetsnew/js/metisMenu/metisMenu-active.js')}}"></script>
+    <!-- sparkline JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/sparkline/jquery.sparkline.min.js')}}"></script>
+    <script src="{{asset('assetsnew/js/sparkline/jquery.charts-sparkline.js')}}"></script>
+    <!-- calendar JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/calendar/moment.min.js')}}"></script>
+    <script src="{{asset('assetsnew/js/calendar/fullcalendar.min.js')}}"></script>
+    <script src="{{asset('assetsnew/js/calendar/fullcalendar-active.js')}}"></script>
+	<!-- float JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/flot/jquery.flot.js')}}"></script>
+    <script src="{{asset('assetsnew/js/flot/jquery.flot.resize.js')}}"></script>
+    <script src="{{asset('assetsnew/js/flot/curvedLines.js')}}"></script>
+    <script src="{{asset('assetsnew/js/flot/flot-active.js')}}"></script>
+    <!-- plugins JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/plugins.js')}}"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="{{asset('assetsnew/js/main.js')}}"></script>
 
     <script>
-      const togglePassword = document.querySelector('#togglePassword');
-      const password = document.querySelector('#id_password');
-    
-      togglePassword.addEventListener('click', function (e) {
-        // toggle the type attribute
-        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-        password.setAttribute('type', type);
-        // toggle the eye slash icon
-        this.classList.toggle('fa-eye-slash');
-    });
-    </script>
-          <script>
-   $("body").on("keyup", "#sponsor", function () {
-   //alert('success');
-       let searchData = $("#sponsor").val();
-       if (searchData.length > 0) {
-           $.ajax({
-               type: 'POST',
-               url: '{{route("get-sponsor")}}',
-               data: {search: searchData},
-               headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-               success: function (result) {
-                   $('#suggestUser').html(result.success)
-                   console.log(result.data)
-                   // if (result.data) {
-                   //     $("#position").val("");
-                   //     $("#placement_id").val("");
-                   //     $("#position").removeAttr('disabled');
-                   // } else {
-                   //     $("#position").val("");
-                   //     $("#placement_id").val("");
-                   //     $('#position').prop('disabled', true);
-                   // }
-               }
-           });
-       }
-       if (searchData.length < 1) $('#suggestUser').html("")
-   })
-
-
-//Check from frontend your name and email is already taken or not
-$(document).ready(function() {
-    $('#logname, #logemail').on('blur', function() {
-        var username = $('#logname').val();
-        var email = $('#logemail').val();
-
-        $.ajax({
-            url: '{{ route('checkDuplicate') }}', // Replace with your route to check duplicates
-            method: 'POST',
-            data: {
-                username: username,
-                email: email,
-                _token: '{{ csrf_token() }}'
-            },
-            success: function(response) {
-                console.log(response.username_taken); // Log the response to the browser console
-                if (response.username_taken) {
-                    $('#errorMessages').html('Username already taken.').show();
-                } else if (response.email_taken) {
-                    $('#errorMessages').html('Email already taken.').show();
-                } else {
-                    $('#errorMessages').hide().empty();
-                }
-            },
-            error: function() {
-                $('#errorMessages').html('Error occurred. Please try again.').show();
+        $('.moreless-button').click(function () {
+            $('.moretext').slideToggle();
+            if ($('.moreless-button').text() == "Load more") {
+                $(this).text("Load less")
+            } else {
+                $(this).text("Load more")
             }
         });
-    });
-});
+    </script>
+</body>
 
-
-
-
-   </script>
-   <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
- 
-  </body>
 </html>

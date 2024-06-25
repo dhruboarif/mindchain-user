@@ -28,9 +28,11 @@
                                 </svg>
                                 <span class="mini-click-non text-capitalize sidebar-title">community Token</span></a>
                           <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="" href=""><span class="mini-sub-pro">Inbox</span></a></li>
-                                <li><a title="" href=""><span class="mini-sub-pro">View Mail</span></a></li>
-                                <li><a title="" href=""><span class="mini-sub-pro">Compose Mail</span></a></li>
+                            <li><a title="" href="/home/bmind-staking-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Bmind Staking History</span></a></li>
+                            <li><a title="" href="/home/bmind-sponsor-bonus-history/{{Auth::user()->id}}{{Auth::user()->id}}"><span class="mini-sub-pro">Bmind Sponsor Bonus History</span></a></li>
+                            <li><a title="" href="/home/bmind-daily-bonus-history/{{Auth::user()->id}}{{Auth::user()->id}}"><span class="mini-sub-pro">Bmind Daily Bonus History</span></a></li>
+                            <li><a title="" href="/home/bmind-level-bonus-history/{{Auth::user()->id}}{{Auth::user()->id}}"><span class="mini-sub-pro">Bmind Level Bonus History</span></a></li>
+                           
                             </ul> 
                         </li>
                         <li class="click-active">
