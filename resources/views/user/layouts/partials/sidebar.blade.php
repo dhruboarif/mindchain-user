@@ -64,7 +64,32 @@
                                 <span class="mini-click-non sidebar-title text-capitalize">Earn MIND</span></a>
                         </li>
 
-                        
+                        <li class="click-active">
+                            <a class="has-arrow" href="#" aria-expanded="false"> <svg class="icon-wrap" width="22" height="22" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.5 1.75V3H10.5V1.75C10.5 1.625 10.375 1.5 10.25 1.5H5.75C5.59375 1.5 5.5 1.625 5.5 1.75ZM4 3V1.75C4 0.8125 4.78125 0 5.75 0H10.25C11.1875 0 12 0.8125 12 1.75V3H14C15.0938 3 16 3.90625 16 5V6.03125C15.8125 6.03125 15.6562 6 15.5 6C15.1562 6 14.8125 6.03125 14.5 6.09375V5C14.5 4.75 14.25 4.5 14 4.5H11.25H4.75H2C1.71875 4.5 1.5 4.75 1.5 5V8H6H11H11.25C10.5625 8.84375 10.125 9.875 10 11H7C6.4375 11 6 10.5625 6 10V9.5H1.5V13C1.5 13.2812 1.71875 13.5 2 13.5H10.375C10.5625 14.0625 10.875 14.5625 11.25 15H2C0.875 15 0 14.125 0 13V8.75V5C0 3.90625 0.875 3 2 3H4ZM11 11.5C11 9.90625 11.8438 8.4375 13.25 7.625C14.625 6.8125 16.3438 6.8125 17.75 7.625C19.125 8.4375 20 9.90625 20 11.5C20 13.125 19.125 14.5938 17.75 15.4062C16.3438 16.2188 14.625 16.2188 13.25 15.4062C11.8438 14.5938 11 13.125 11 11.5ZM15.5 9C15.2188 9 15 9.25 15 9.5V11.5C15 11.7812 15.2188 12 15.5 12H17C17.25 12 17.5 11.7812 17.5 11.5C17.5 11.25 17.25 11 17 11H16V9.5C16 9.25 15.75 9 15.5 9Z" fill="#B4B4B4"/>
+                                </svg>
+                                <span class="mini-click-non text-capitalize sidebar-title">Earn Mind</span></a>
+                          <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="" href="/home/buy_staking/{{Auth::user()->id}}{{Auth::user()->id}}"><span class="mini-sub-pro">Mind Staking</span></a></li>
+                            <li><a title="" href="/home/staking-history/{{Auth::user()->id}}"><span class="mini-sub-pro">Mind Staking History</span></a></li>
+                    
+                           
+                            </ul> 
+                        </li>
+
+
+                        <li class="click-active">
+                            <a class="has-arrow" href="#" aria-expanded="false"> <svg class="icon-wrap" width="22" height="22" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.5 1.75V3H10.5V1.75C10.5 1.625 10.375 1.5 10.25 1.5H5.75C5.59375 1.5 5.5 1.625 5.5 1.75ZM4 3V1.75C4 0.8125 4.78125 0 5.75 0H10.25C11.1875 0 12 0.8125 12 1.75V3H14C15.0938 3 16 3.90625 16 5V6.03125C15.8125 6.03125 15.6562 6 15.5 6C15.1562 6 14.8125 6.03125 14.5 6.09375V5C14.5 4.75 14.25 4.5 14 4.5H11.25H4.75H2C1.71875 4.5 1.5 4.75 1.5 5V8H6H11H11.25C10.5625 8.84375 10.125 9.875 10 11H7C6.4375 11 6 10.5625 6 10V9.5H1.5V13C1.5 13.2812 1.71875 13.5 2 13.5H10.375C10.5625 14.0625 10.875 14.5625 11.25 15H2C0.875 15 0 14.125 0 13V8.75V5C0 3.90625 0.875 3 2 3H4ZM11 11.5C11 9.90625 11.8438 8.4375 13.25 7.625C14.625 6.8125 16.3438 6.8125 17.75 7.625C19.125 8.4375 20 9.90625 20 11.5C20 13.125 19.125 14.5938 17.75 15.4062C16.3438 16.2188 14.625 16.2188 13.25 15.4062C11.8438 14.5938 11 13.125 11 11.5ZM15.5 9C15.2188 9 15 9.25 15 9.5V11.5C15 11.7812 15.2188 12 15.5 12H17C17.25 12 17.5 11.7812 17.5 11.5C17.5 11.25 17.25 11 17 11H16V9.5C16 9.25 15.75 9 15.5 9Z" fill="#B4B4B4"/>
+                                </svg>
+                                <span class="mini-click-non text-capitalize sidebar-title">Earn MUSD</span></a>
+                          <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="" href="/home/bmind-sponsor-bonus-history/{{Auth::user()->id}}{{Auth::user()->id}}"><span class="mini-sub-pro">MUSD Staking</span></a></li>
+                            <li><a title="" href="/home/mstaking-history/{{Auth::user()->id}}"><span class="mini-sub-pro">MUSD Staking History</span></a></li>
+                    
+                           
+                            </ul> 
+                        </li>
 
                         <li class="click-active">
                             <a class="" href="#" aria-expanded="false">
