@@ -405,53 +405,9 @@
                                                       </div>
                                                     </div>
                                                   </div>
-                                                <button type="button" data-toggle="modal" data-target="#musdStake" data-whatever="" class="btn btn-sm stake text-capitalize">
-                                                <span>Stake</span></button>
-                                                <div class="modal withdraw-modal fade" id="musdStake" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                      <div class="modal-content">
-                                                        <div class="modal-header">
-                                                          <h5 class="modal-title">MUSD Stake</h5>
-                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                          </button>
-                                                        </div>
-                                                        
-                                                        <div class="modal-body m-stake">
-                                                            <form>
-                                                              <div class="form-group d-flex">
-                                                                <label for="musdAvlBal" class="col-form-label">Available Balance ($)</label>
-                                                                <input type="text" class="form-control" disabled id="musd_balance_display" value="$500.0000">
-                                                              </div>
-                                                              <div class="form-group">
-                                                                  <label for="musdStakePrice" class="col-form-label">MIND Price ($)</label>
-                                                                  <input type="text" class="form-control" disabled id="musdStakePrice" value="0.4154">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                  <label for="musd-amount-stake" class="col-form-label">Quantity (MIND)</label>
-                                                                  <input type="text" class="form-control" id="musd-amount-stake">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                  <label for="musd-tv-stake" class="col-form-label">Total Values ($)</label>
-                                                                  <input type="text" class="form-control" disabled id="musd-tv-stake">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="musd-tv-stake" class="col-form-label">Saaking Fee (%)</label>
-                                                                    <input type="text" class="form-control" disabled id="musd-tv-stake">
-                                                                  </div>
-                                                                  <div class="form-group">
-                                                                    <label for="musd-tv-stake" class="col-form-label">Payable ($)</label>
-                                                                    <input type="text" class="form-control" disabled id="musd-tv-stake">
-                                                                  </div>
-                                                            </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                                          <button type="button" class="btn btn-primary">Stake</button>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
+                                                  <a href="/home/buy_staking/{{Auth::user()->id}}"><button type="button" class="btn btn-sm stake text-capitalize"><span>Stake</span></button></a>
+                                                
+                               
                                             </div>
                                             <div class="coin-img">
                                                 <img src="img/img-icon/MUSD Icon-01.png" alt="">
@@ -565,8 +521,10 @@
                                                       </div>
                                                     </div>
                                                   </div>
-                                                <button type="button" data-toggle="modal" data-target="#bmindStake" data-whatever="" class="btn btn-sm stake text-capitalize">
+                                                  <a href="/home/buy-bmind/{{Auth::user()->id}}">
+                                                <button type="button" class="btn btn-sm stake text-capitalize">
                                                 <span>Stake</span></button>
+                                            </a>
                                                 <div class="modal stake-modal fade" id="bmindStake" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                       <div class="modal-content">
