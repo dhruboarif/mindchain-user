@@ -2,7 +2,6 @@
 #public
 #public/storage
 #storage/*.key
-#storage/logs
 #vendor
 .env
 .env.backup
@@ -15,3 +14,4 @@ yarn-error.log
 /.vscode
 /config/*
 /bootstrap/*
+/storage/logs/laravel.log
