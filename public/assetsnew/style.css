@@ -4106,12 +4106,12 @@ th.fc-day-header.fc-widget-header {
     align-items: center;
     margin-left: 10px;
 }
-.copy-icon, .clipboard-icon, .copy-usdt-depo-wall, .clipboard-usdt-depo-wall, .copy-usdt-with-wall, .clipboard-usdt-with-wall, .copy-bmind-depo-wall, .clipboard-bmind-depo-wall, .copy-bmind-with-wall, .clipboard-bmind-with-wall, .copy-musd-depo-wall, .clipboard-musd-depo-wall, .copy-musd-with-wall, .clipboard-musd-with-wall, .copy-mind-depo-wall, .clipboard-mind-depo-wall, .copy-mind-with-wall, .clipboard-mind-with-wall {
+.copy-icon, .clipboard-icon, .copy-usdt-depo-wall, .clipboard-usdt-depo-wall, .copy-usdt-depo-wall-menu, .clipboard-usdt-depo-wall-menu, .copy-usdt-with-wall, .clipboard-usdt-with-wall, .copy-bmind-depo-wall, .clipboard-bmind-depo-wall, .copy-bmind-with-wall, .clipboard-bmind-with-wall, .copy-musd-depo-wall, .clipboard-musd-depo-wall, .copy-musd-with-wall, .clipboard-musd-with-wall, .copy-mind-depo-wall, .clipboard-mind-depo-wall, .copy-mind-with-wall, .clipboard-mind-with-wall {
     font-size: 16px;
     margin-top: -15px !important;
     display: none;
 }
-.copy-icon, .copy-usdt-depo-wall, .copy-usdt-with-wall, .copy-bmind-depo-wall,  .copy-bmind-with-wall, .copy-musd-depo-wall, .copy-musd-with-wall, .copy-mind-depo-wall, .copy-mind-with-wall {
+.copy-icon, .copy-usdt-depo-wall, .copy-usdt-depo-wall-menu, .copy-usdt-with-wall, .copy-bmind-depo-wall,  .copy-bmind-with-wall, .copy-musd-depo-wall, .copy-musd-with-wall, .copy-mind-depo-wall, .copy-mind-with-wall {
     display: inline;
 }
 .hidden-input {
@@ -4180,6 +4180,7 @@ th.fc-day-header.fc-widget-header {
 .m-stake label{
     width: 50% !important;
     margin: 10px;
+    text-align: left;
 }
 .m-stake .form-control{
     width: 50% !important;
@@ -4324,4 +4325,289 @@ th.fc-day-header.fc-widget-header {
     border: none;
     padding: 10px 18px;
     border-radius: 5px;
+}
+.profile-status-wrap .profile-sec{
+    padding:10px 20px;
+}
+.profile-data-warp .dp-img{
+    width: 25%;
+}
+.profile-data-warp .dp-img img{
+    height: 124px;
+    width: 121px;
+    margin-bottom: 5px;
+}
+.profile-data-warp .profile-details{
+    width: 75%;
+    margin-top: 10px;
+}
+.profile-data-warp{
+    display:flex;
+}
+.profile-data .prof-url{
+    margin-left: 0;
+}
+.profile-data .prof-url .copy-button{
+    margin-top: 10px;
+}
+.role .rank-icon{
+    display: flex;
+    padding-bottom: 12px;
+
+}
+.role .rank-icon img{
+    height: 80px;
+    
+}
+.profile-info{
+    display: flex;
+    justify-content: space-between;
+}
+.profile-info input{
+    height: 25px;
+    background: none;
+    box-shadow: none;
+    width: 250px;
+}
+.profile-info input:focus, .password-update input:focus{
+    box-shadow: none;
+}
+.profile-info input::placeholder, .password-update input::placeholder{
+    color: #fff;
+}
+.profile-info input:disabled, .password-update input:disabled{
+    background: none;
+}
+.profile-settings button{
+    background: #635BFE;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.password-update{
+    padding-bottom: 30px !important;
+}
+.password-update form{
+    margin-top: 30px;
+}
+.password-update label{
+    font-weight: 300;
+}
+.password-update input{
+    background: none;
+    box-shadow: none;
+    border-radius: 10px;
+    border: 1px solid #B8B8B8;
+    margin-bottom: 20px;
+}
+.password-update button{
+    background: #635BFE;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.pay-button form .form-group label{
+    text-align: left !important;
+}
+
+/* auth section start  */
+.authinatication .auth-img-sec{
+    background: #1A1721;
+    padding: 130px 60px;
+}
+.authinatication .auth-data{
+    background: #25212F;
+    padding:60px;
+    padding-bottom: 20px;
+    padding-top: 80px;
+}
+.authinatication .auth-data a{
+    color: #FCF98B;
+}
+.authinatication .auth-data a:hover{
+    color: #00FFF2;
+}
+.authinatication .social-icons{
+    width: 50%;
+    margin: auto;
+}
+.authinatication .social-icons ul{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+.authinatication .social-icons ul li a i{
+    font-size: 25px;
+    color: #fff;
+}
+.authinatication .social-icons ul li a i:hover{
+    color: #635BFE;
+}
+.authinatication .auth-data .auth-logo-sec img{
+    width: 300px;
+}
+.authinatication .auth-data .auth-heading h5{
+    font-size: 25px;
+    font-weight: 400;
+    margin: 15px 0;
+}
+.auth-data form .form-group{
+    margin-bottom: 0;
+}
+.auth-data form label{
+    font-weight: 300;
+}
+.auth-data form label span{
+    color: red;
+}
+.auth-data form input{
+    padding-left: 40px;
+    border-radius: 10px;
+    background: none;
+    border: 1px solid #B8B8B8
+}
+.auth-data form input::placeholder{
+    color: #A8A8A8;
+    background: none;
+}
+.auth-data form input:disabled{
+    background: none;
+}
+.auth-data form .d-flex{
+    display: flex;
+}
+.auth-data form .checkbox{
+    margin-top: 0 ;
+    margin-right:15px;
+    width: 18px;
+    height: 18px;
+}
+.auth-data form svg{
+    margin-top: -62px;
+    margin-left: 10px;
+}
+.auth-data button{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    background: #635BFE;
+    border-radius: 10px;
+    border: 1px solid #635BFE;
+
+}
+.authinatication .auth-left-sign-in{
+    padding: 80px 60px;
+}
+.authinatication .auth-sign-in{
+    padding:110px 60px;
+}
+.auth-data .signin-content{
+    margin-top: 10px;
+}
+.auth-data .forget-password{
+    margin-top: -15px;
+    margin-right: 5px;
+    font-weight: 300;
+    font-size: 12px;
+}
+.authinatication .auth-left-forget-pass{
+    padding: 45px 60px;
+}
+.authinatication .auth-forget-pass{
+    padding:140px 60px;
+}
+.authinatication .auth-left-reset-pass{
+    padding: 45px 60px;
+}
+.authinatication .auth-reset-pass{
+    padding:100px 60px;
+}
+
+
+.bmind-top .breadcome-price-section{
+    float: left;
+}
+.bmind-page-staus p, .bmind-page-staus label{
+    color:#CECECE;
+    font-weight: 400;
+}
+.bmind-page-staus .bmind-card .card-box{
+    display: flex;
+    border: 1px solid #635BFE;
+    border-bottom: 3px solid #635BFE;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.bmind-page-staus .stage-title{
+    margin-left: 20px;
+}
+.bmind-page-staus .bmind-card .card-box .card-content{
+    margin-left: 10px;
+}
+.bmind-stage-list .card-content, .earn-packege-list .card-content{
+    margin-top: 50px;
+}
+.bmind-stage-list .card-box, .earn-packege-list .card-box{
+    border: 1px solid #635BFE;
+    margin: 10px;
+    border-radius: 10px;
+}
+.bmind-stage-list .card-box .bmind-btn, .earn-packege-list .card-box .bmind-btn{
+    background: #FF971D;
+    padding: 10px 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: none;
+}
+.bmind-stage-list .card-box .bmind-btn:hover, .earn-packege-list .card-box .bmind-btn:hover{
+    background: #FF975d;
+}
+.bmind-stage-list .card-content form .form-group, .earn-packege-list .card-content form .form-group{
+    display: flex;
+    padding: 5px 30px;
+    justify-content: space-between;
+    border-bottom: 1px solid #dddddd;
+}
+.bmind-stage-list .card-content form .form-group label, .earn-packege-list .card-content form .form-group label{
+    margin-top: -5px;
+}
+.bmind-stage-list .card-content form .form-group input, .earn-packege-list .card-content form .form-group input{
+    width: 23%;
+    background: none;
+    border: none;
+    height: 30px;
+    margin-top: -10px;
+}
+.earn-packege-list .card-content form .form-group select{
+    width: 23%;
+    background: none;
+    border: none;
+    height: 30px;
+    margin-top: -10px;
+    padding: 5px;
+    border: 1px solid #FF971D;
+    margin-right: 10px;
+}
+.earn-packege-list .card-content form .form-group select option{
+    background: #000;
+}
+.bmind-stage-list .card-content form .form-group .token-amount, .earn-packege-list .card-content form .form-group .token-amount{
+    border: 1px solid #FF971D;
+    width: 15%;
+    margin-right: 45px;
+    border-radius: 3px;
+}
+.earn-page-staus .col-lg-6{
+    width: 50%;
+    margin-left: 250px;
 }

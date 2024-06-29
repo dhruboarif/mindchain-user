@@ -1765,7 +1765,8 @@ return redirect()->route('send-usdt')
   
   public function store_bmind(Request $request)
   {
-       if(Auth::user()->status == 0)
+    
+    if(Auth::user()->status == 0)
     {
           return back()->with('purchase_error', 'You are not eligible!!');
     };
@@ -1924,7 +1925,6 @@ return redirect()->route('send-usdt')
         
         
         
-         
          
          
 

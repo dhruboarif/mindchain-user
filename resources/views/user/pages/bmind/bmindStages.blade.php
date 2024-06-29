@@ -2,257 +2,240 @@
 
 
 @section('user_content')
-<style>
-       .text-right{
-           text-align: right;
-       }
-       .bpaper{
-           margin-left:30px !important;
-       }
-   </style>
-   <div class="container-fluid">
-       
-       
-       
-       
-                      
-        <!--Mindchain Product Section-->
+    <div class="section-admin container-fluid mg-b-30">
+        <div class="row admin text-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="admin-content res-mg-t-15 d-flex row justify-content-between">
+                    <div class="row page-top-section bmind-top">
+                        <!-- breadcome title Section  -->
+                    <div class="col-sm-12 ">
+                        <div class=" breadcome-price-section ">
+                            <p class="breadcome-section-name">Available Balance(USDT):</p>
+                            <p class="breadcome-section-price">{{$data['sum_usdwallet'] ? '$'.number_format((float)$data['sum_usdwallet'], 2, '.', '') : '$00.00'}}</p>
+                        </div>
+                    </div>
+                </div>
+                @if(Session::has('package_purchase'))
+                <div class="alert alert-success d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24">
+                <use xlink:href="#check-circle-fill" />
+                </svg>
+                <div>
+                {{Session::get('package_purchase')}}
+                </div>
+                </div>
+                 @elseif(Session::has('purchase_error'))
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24">
+                <use xlink:href="#check-circle-fill" />
+                </svg>
+                <div>
+                {{Session::get('purchase_error')}}
+                </div>
+                </div>
+                @endif
+                             <!-- Content  section 
+     ============================================  -->
+                    <div class="bmind-page-staus mg-t-30  mg-b-30">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bmind-card">
+                                            <!-- <div class="card-box">
+                                                <div class="card-icon">
+                                                    <img src="{{asset('assetsnew/img/img-icon/bmind-icon.png') }}" alt="">
+                                                </div>
+                                                <div class="card-content">
+                                                    <p class="card-title">Token Name:</p>
+                                                    <h4 class="card-price">190318.89</h4>
+                                                </div>
+                                            </div> -->
+                                            <div class="card-box">
+                                                <div class="card-icon">
+                                                    <img src="{{asset('assetsnew/img/img-icon/bmind-icon.png')}}" alt="">
+                                                </div>
+                                                <div class="card-content">
+                                                    <p class="card-title">Token Name:</p>
+                                                    <h4 class="card-price">190318.89</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bmind-card">
+                                            <div class="card-box">
+                                                <div class="card-icon">
+                                                    <img src="{{asset('assetsnew/img/img-icon/bmind-icon.png') }}" alt="">
+                                                </div>
+                                                <div class="card-content">
+                                                    <p class="card-title">Symbol:</p>
+                                                    <h4 class="card-price">BMIND</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bmind-card">
+                                            <div class="card-box">
+                                                <div class="card-icon">
+                                                    <img src="{{asset('assetsnew/img/img-icon/network.png') }}" alt="">
+                                                </div>
+                                                <div class="card-content">
+                                                    <p class="card-title">Network:</p>
+                                                    <h4 class="card-price">MIND20</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bmind-card">
+                                            <div class="card-box">
+                                                <div class="card-icon">
+                                                    <img src="{{asset('assetsnew/img/img-icon/supply.png') }}" alt="">
+                                                </div>
+                                                <div class="card-content">
+                                                    <p class="card-title">Sypply:</p>
+                                                    <h4 class="card-price">1 Billion</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bmind-card">
+                                            <div class="card-box">
+                                                <div class="card-icon">
+                                                    <img src="{{asset('assetsnew/img/img-icon/current-price.png') }}" alt="">
+                                                </div>
+                                                <div class="card-content">
+                                                    <p class="card-title">Current Price:</p>
+                                                    <h4 class="card-price">0.03</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bmind-card">
+                                            <div class="card-box">
+                                                <div class="card-icon">
+                                                    <img src="{{asset('assetsnew/img/img-icon/next-price.png') }}" alt="">
+                                                </div>
+                                                <div class="card-content">
+                                                    <p class="card-title">Next Price:</p>
+                                                    <h4 class="card-price">0.04</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bmind-card">
+                                            <div class="card-box">
+                                                <div class="card-icon">
+                                                    <img src="{{asset('assetsnew/img/img-icon/current-stage.png') }}" alt="">
+                                                </div>
+                                                <div class="card-content">
+                                                    <p class="card-title">Current Stage:</p>
+                                                    <h4 class="card-price">STO</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bmind-card">
+                                            <div class="card-box">
+                                                <div class="card-icon">
+                                                    <img src="{{asset('assetsnew/img/img-icon/next-stage.png') }}" alt="">
+                                                </div>
+                                                <div class="card-content">
+                                                    <p class="card-title">Next Stage:</p>
+                                                    <h4 class="card-price">Venus</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mg-t-30">
+                                    <div class="stage-title">
+                                        <h3 class="text-left" >Bmind Stage List</h3>
+                                    </div>
+                                    
+                                    <div class="row mg-t-30 mg-b-30">
+                                        @foreach($data['bmindstages'] as $row)
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 bmind-stage-list ">
+                                            <div class="card-box">
+                                                <div class="card-icon mg-t-15 mg-b-30">
+                                                    <img src="{{asset('assetsnew/img/img-icon/stage-icon.png') }}" alt="">
+                                                    <h4 class="mg-t-15 mg-t-30" id="stage_name">
+                                                        {{$row->title}}
+                                                    </h4>
+                                                </div>
+                                                <div class="card-content mg-t-30">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label for="totalTokenIssued" class="col-form-label" >Total Token Issued</label>
+                                                            <input disabled type="text" class="form-control" value="{{$row->total_token_issues }}" >
+                                                            <input type="text" class="form-control" id="totalTokenIssued" disabled value="30000000">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="availableTokens" class="col-form-label">Available Tokens</label>
+                                                            <input type="text" class="form-control" id="availableTokens" disabled value="{{$row->total_token_issues - $row->total_token_sell }}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="tokenBasePrice" class="col-form-label">Token Base Price</label>
+                                                        <input disabled type="text" class="form-control" id="token_base_price_{{$row->title}}" value="{{$row->token_base_price}}" >
 
-    <div class="row">
-          <div class="col-lg-3 ">
-            <div class="card shining-card-2">
-                <div class="card-body d-flex align-items-center">
-                    <img src="{{asset('assets/images/coins/bmind.png')}}" class="img-fluid avatar avatar-50 avatar-rounded" alt="img60">
-        
-                    <div class="pt-1 ms-3">
-                        <span class="fs-5 me-2">Token Name:</span>
-                        <h5 class="" style="visibility: visible;"><span class="fs-5">MindBase</span></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 ">
-            <div class="card shining-card-2">
-                <div class="card-body d-flex align-items-center">
-                    <img src="{{asset('assets/images/coins/bmind.png')}}" class="img-fluid avatar avatar-50 avatar-rounded" alt="img60">
-        
-                    <div class="pt-1 ms-3">
-                        <span class="fs-5 me-2">Symbol:</span>
-                        <h5 class="" style="visibility: visible;"><span class="fs-5">BMIND</span></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 ">
-            <div class="card shining-card-2">
-                <div class="card-body d-flex align-items-center">
-                    <img src="{{asset('assets/images/coins/network.png')}}" class="img-fluid avatar avatar-50 avatar-rounded" alt="img60">
-        
-                    <div class="pt-1 ms-3">
-                        <span class="fs-5 me-2">Network:</span>
-                        <h5 class="" style="visibility: visible;"><span class="fs-5">MIND20</span></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 ">
-            <div class="card shining-card-2">
-                <div class="card-body d-flex align-items-center">
-                    <img src="{{asset('assets/images/coins/supply.png')}}" class="img-fluid avatar avatar-50 avatar-rounded" alt="img60">
-        
-                    <div class="pt-1 ms-3">
-                        <span class="fs-5 me-2">Supply:</span>
-                        <h5 class="" style="visibility: visible;"><span class="fs-5">1 Billion</span></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-3 ">
-            <div class="card shining-card-2">
-                <div class="card-body d-flex align-items-center">
-                    <img src="{{asset('assets/images/coins/price.png')}}" class="img-fluid avatar avatar-50 avatar-rounded" alt="img60">
-        
-                    <div class="pt-1 ms-3">
-                        <span class="fs-5 me-2">Current Price:</span>
-                        <h5 class="" style="visibility: visible;"><span class="fs-5">0.03</span></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 ">
-            <div class="card shining-card-2">
-                <div class="card-body d-flex align-items-center">
-                    <img src="{{asset('assets/images/coins/export.png')}}" class="img-fluid avatar avatar-50 avatar-rounded" alt="img60">
-        
-                    <div class="pt-1 ms-3">
-                        <span class="fs-5 me-2">Next Price</span>
-                        <h5 class="" style="visibility: visible;"><span class="fs-5">0.04</span></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-3 ">
-            <div class="card shining-card-2">
-                <div class="card-body d-flex align-items-center">
-                    <img src="{{asset('assets/images/coins/current.png')}}" class="img-fluid avatar avatar-50 avatar-rounded" alt="img60">
-        
-                    <div class="pt-1 ms-3">
-                        <span class="fs-5 me-2">Current Stage:</span>
-                        <h5 class="" style="visibility: visible;"><span class="fs-5">STO</span></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 ">
-            <div class="card shining-card-2">
-                <div class="card-body d-flex align-items-center">
-                    <img src="{{asset('assets/images/coins/export.png')}}" class="img-fluid avatar avatar-50 avatar-rounded" alt="img60">
-        
-                    <div class="pt-1 ms-3">
-                        <span class="fs-5 me-2">Next Stage:</span>
-                        <h5 class="" style="visibility: visible;"><span class="fs-5">Venus</span></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                                          </div>
+                                                          <div class="form-group">
+                                                            <label for="bonusDuration" class="col-form-label">Bonus Duration (days)</label>
+                                                        <input disabled type="text" class="form-control" value="{{$row->duration}}" >
 
+                                                          </div>
+                                                          <div class="form-group">
+                                                            <label for="tokenAmount" class="col-form-label">Token Amount</label>
+                                                            <select class="form-select finalamount" name="amount" id="amount_{{$row->title}}" required onchange="updateSelectedAmount('{{$row->title}}')">
+                                                                @foreach($row->communityTokenPackageSettings as $value)
+                                                                    <option value="{{$value->amount}}">{{$value->amount}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                          </div>
+                                                          <div class="form-group">
+                                                            <label for="totalPrice" class="col-form-label">Total Price (USDT)</label>
+                                                            <input disabled type="text" id="total_price_{{$row->title}}" class="form-control" value="{{ $row->communityTokenPackageSettings->isNotEmpty() ? $row->communityTokenPackageSettings[0]->amount * $row->token_base_price : '' }}" >
+                                                          </div>
+                                                          <div class="form-group">
+                                                            <label for="dailyBonus" class="col-form-label">Daily Bonus</label>
+                                                            <input disabled type="text" name="daily_bonus" class="form-control" id="daily_bonus_{{$row->title}}" value="{{ $row->communityTokenPackageSettings->isNotEmpty() ? $row->communityTokenPackageSettings[0]->daily_bonus : '' }}">
+                                                          </div>
+                                                          <div class="form-group">
+                                                            <label for="startDate" class="col-form-label">Start Date</label>
+                                                        <input disabled type="text" class="form-control" value="{{$row->start_date}}" >
+
+                                                          </div>
+                                                          <div class="form-group">
+                                                            <label for="endDate" class="col-form-label">End Date</label>
+                                                        <input disabled type="text" class="form-control" value="{{$row->end_date}}" >
+
+                                                          </div>
+                                                        </form>
+
+                                                        @if($row->status == 'Active')
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bmindbuymodal{{$row->id}}" onclick="captureSelectedAmount('{{$row->title}}')">Buy B-Mind</button>
+                                                        @include('user.modals.bmind.bmindbuymodal')
+                                                        @else
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#" disabled>Upcoming</button>
+                                                        @endif
+
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        @endforeach
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!--Content    section 
+                ============================================  -->
+                </div>
+            </div>           
+        </div>
     </div>
 
-    <!--Mindchain Product Section end-->
-   
-        <div class="container">
-                      
-            <h6 class="text-success">Available USDT: {{$data['sum_usdwallet'] ? '$'.number_format((float)$data['sum_usdwallet'], 2, '.', '') : '$00.00'}}</h6>
-           <br>
-            <div class="d-flex">
-                <h4 class="btn btn-primary">BMIND Stage List</h4>
-                <a href=""><h4 class="btn btn-secondary bpaper" src="#">BMINDPAPER</h4></a>
-            </div>
-        </div>
-            
-            @if(Session::has('package_purchase'))
-            <div class="alert alert-success d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24">
-            <use xlink:href="#check-circle-fill" />
-            </svg>
-            <div>
-            {{Session::get('package_purchase')}}
-            </div>
-            </div>
-             @elseif(Session::has('purchase_error'))
-            <div class="alert alert-danger d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24">
-            <use xlink:href="#check-circle-fill" />
-            </svg>
-            <div>
-            {{Session::get('purchase_error')}}
-            </div>
-            </div>
-            @endif
-            <br>
-            <br>
-            <div class="bd-example">
-            <div class="row  row-cols-1 row-cols-md-2 g-4">
-              @foreach($data['bmindstages'] as $row)
-                <div class="col-md-12">
-                    <div class="card">
-                      <br>
-                      <div class="text-center">
-                          <img src="{{asset('storage/basemind/'.$row->image)}}" style="height:100px;width:100px;" class="bd-placeholder-img card-img-top" width="20%" height="20%" ></img>
-                      </div>
-                      <hr>
-
-                      <div class="card-body">
-                        <div class="input-group mb-3">
-                        <!-- <span class="input-group-text" id="basic-addon1"></span> -->
-                        <input disabled type="text" id="stage_name" class="form-control" style="color:#D98019; font-weight:100%;" value="{{$row->title}}" >
-                          </div>
-                             <div class="input-group mb-3">
-                            <span class="input-group-text text-right"  id="basic-addon1" style="color:#D98019;width: 70%; font-weight:100%;">Total Token Issued</span>
-                            <input disabled type="text" class="form-control" value="{{$row->total_token_issues }}" >
-                            </div>
-                            
-                            <div class="input-group mb-3">
-                            <span class="input-group-text text-right"  id="basic-addon1" style="color:#D98019;width: 70%; font-weight:100%;">Available Tokens</span>
-                            <input disabled type="text" class="form-control" value="{{$row->total_token_issues - $row->total_token_sell }}" >
-                            </div>
-                              
-                             <div class="input-group mb-3">
-                              <span class="input-group-text text-right" style="color:#D98019; width: 70%; font-weight:100%;" id="basic-addon1">
-                                                                  Token Base Price</span>
-                              <input disabled type="text" class="form-control" id="token_base_price_{{$row->title}}" value="{{$row->token_base_price}}" >
-                                </div>
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text text-right" style="color:#D98019; width: 70%; font-weight:100%;" id="basic-addon1">Bonus Duration
-                                                                                      (days)</span>
-                                        <input disabled type="text" class="form-control" value="{{$row->duration}}" >
-                                    </div>
-                              
-                                    
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text text-right" style="color:#D98019; width: 70%; font-weight:100%;" id="basic-addon1">Token Amount</span>
-                                        <select class="form-select finalamount" name="amount" id="amount_{{$row->title}}" required onchange="updateSelectedAmount('{{$row->title}}')">
-                                            @foreach($row->communityTokenPackageSettings as $value)
-                                                <option value="{{$value->amount}}">{{$value->amount}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    
-                                     <div class="input-group mb-3">
-                                      <span class="input-group-text text-right" style="color:#D98019; width: 70%; font-weight:100%;" id="basic-addon1">
-                                                                          Total Price (USDT)</span>
-                                      <input disabled type="text" id="total_price_{{$row->title}}" class="form-control" value="{{ $row->communityTokenPackageSettings->isNotEmpty() ? $row->communityTokenPackageSettings[0]->amount * $row->token_base_price : '' }}" >
-                                    </div>
-                                    
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text text-right" style="color:#D98019; width: 70%; font-weight:100%;" id="basic-addon1">Daily
-                                                                                      Bonus </span>
-                                        <input disabled type="text" name="daily_bonus" class="form-control" id="daily_bonus_{{$row->title}}" value="{{ $row->communityTokenPackageSettings->isNotEmpty() ? $row->communityTokenPackageSettings[0]->daily_bonus : '' }}">
-                                    </div>
-                                    
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text text-right" style="color:#D98019; width: 70%; font-weight:100%;" id="basic-addon1">Start Date</span>
-                                        <input disabled type="text" class="form-control" value="{{$row->start_date}}" >
-                                    </div>
-                                    
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text text-right" style="color:#D98019; width: 70%; font-weight:100%;" id="basic-addon1">End Date</span>
-                                        <input disabled type="text" class="form-control" value="{{$row->end_date}}" >
-                                    </div>
-                                    
-                                    <div class="text-center">
-                                        @if($row->status == 'Active')
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bmindbuymodal{{$row->id}}" onclick="captureSelectedAmount('{{$row->title}}')">Buy B-Mind</button>
-                                        @include('user.modals.bmind.bmindbuymodal')
-                                        @else
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#" disabled>Upcoming</button>
-                                        @endif
-
-                                          <!--  @if(Auth::user()->status == 0)-->
-                                          <!--  <button disabled type="submit" class="btn btn-primary">Buy B-Mind</button>-->
-                                          <!--  @else-->
-                                          <!--<button type="button" disabled class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bmindbuymodal{{$row->id}}">Buy B-Mind</button>-->
-                                          <!--@include('user.modals.bmind.bmindbuymodal')-->
-                                          <!--@endif-->
-                                        </form>
-                                    </div>
-
-                      </div>
-                    </div>
-                </div>
-                @endforeach
 
 
-
-            </div>
-
-
-
-
-@endsection
-
+    @push('scripts')
+      
+      
 <script>
     function updateSelectedAmount(stageId) {
 
@@ -298,5 +281,6 @@
     }
 </script>
 
-
-
+   
+    @endpush
+@endsection

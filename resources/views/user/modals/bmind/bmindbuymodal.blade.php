@@ -1,39 +1,19 @@
-<div class="modal fade text-left" id="bmindbuymodal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel17" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
+<div class="buttn">
+    <div class="modal fade mg-t-30" id="bmindbuymodal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog mg-t-30" role="document">
+          <div class="modal-content mg-t-30">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel17">Buy B-Mind</h4>
-                <button type="button" class="btn-primary close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+              <h5 class="modal-title text-left" id="exampleModalLabel">Buy B-Mind</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="modal-body">
-              <section id="multiple-column-form">
-                  <div class="row">
-                      <div class="col-12">
-                          <div class="card">
-
-                              <div class="card-body">
-
-                              
-
-
-                        <div class="mb-3">
-                            Are you sure you want to Buy this B-Mind?
-
-                          
-                        </div>
-                        
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </section>
+            <div class="modal-body text-left">
+              <p>Are you sure you want to Buy this B-Mind?</p>
             </div>
-            
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <form id="jquery-val-form" action="{{ route('buy-bmind') }}" method="post">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <form id="jquery-val-form" action="{{ route('buy-bmindnew') }}" method="post">
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="bmind_id" value="{{ $row->id }}">
@@ -41,24 +21,7 @@
                     <button type="submit" class="btn btn-primary">Confirm</button>
                 </form>
             </div>
-
-            <!--<div class="modal-footer">-->
-            <!--    <form id="jquery-val-form" action="{{route('buy-bmind')}}" method="post">-->
-            <!--                            @csrf-->
-            <!--                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">-->
-            <!--                            <input type="hidden" name="package_id" value="{{$row->id}}">-->
-
-            <!--    <button type="submit" class="btn btn-primary">Confirm</button>-->
-            <!--    </form>-->
-            <!--    <form id="jquery-val-form" action="#" method="post">-->
-            <!--                            @csrf-->
-            <!--                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">-->
-            <!--                            <input type="hidden" name="package_id" value="{{$row->id}}">-->
-
-            <!--    <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Buy With Bonus Coin</button>-->
-            <!--    </form>-->
-            <!--</div>-->
-              </form>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+  </div>
