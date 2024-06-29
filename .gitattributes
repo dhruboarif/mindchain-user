@@ -8,4 +8,4 @@
 CHANGELOG.md export-ignore
 /config export-ignore
 /bootstrap export-ignore
-storage/logs/laravel.log filter=lfs diff=lfs merge=lfs -text
+*.largefile filter=lfs diff=lfs merge=lfs -text
