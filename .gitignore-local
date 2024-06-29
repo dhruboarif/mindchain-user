@@ -14,4 +14,4 @@ yarn-error.log
 /.vscode
 /config/*
 /bootstrap/*
-/storage/logs/laravel.log
+/storage/logs/*
