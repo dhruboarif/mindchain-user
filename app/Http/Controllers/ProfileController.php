@@ -22,18 +22,22 @@ class ProfileController extends Controller
   }
   public function UpdateProfile(Request $request): RedirectResponse
   {
+
+   
+
     $request->validate([
         'name' => 'required|string|max:255',
-        'gender' => 'required|in:male,female',
+        'gender' => 'required|in:male,female,Male,Female',
         'date_of_birth' => 'required|date',
         'address' => 'required|string|max:255',
         'city' => 'required|string|max:255',
-        'country' => 'required|string|max:2', // You may want to adjust the max length based on your needs
+        'country' => 'required|string', // You may want to adjust the max length based on your needs
         'postal_code' => 'required|string|max:20',
         'contact' => 'required|numeric',
         'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust the allowed file types and size limit
         'nid_passport' => 'required|string|max:255',
     ]);
+    //dd($request->all());
     
     $address = $request->address;
     $name=$request->name;
@@ -75,11 +79,13 @@ class ProfileController extends Controller
       return back()->with('profile_updated','Profile has been updated successfully!');
   }
   public function changePassStore(Request $request){
+   
     $request->validate([
         'old_password' => 'required',
         'new_password' => 'required|min:5',
         'password_confirmation' => 'required|min:5',
     ]);
+
     $db_pass = Auth::user()->password;
     $current_password = $request->old_password;
     $newpass = $request->new_password;
