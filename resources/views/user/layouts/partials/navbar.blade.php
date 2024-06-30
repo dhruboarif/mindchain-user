@@ -129,7 +129,7 @@
                                                         <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                             <!-- <li><a href="register.html"><span class="icon nalika-home author-log-ic"></span> Register</a>
                                                             </li> -->
-                                                            <li><a href="#"><span class="icon nalika-user author-log-ic"></span> My Profile</a>
+                                                            <li><a href="/home/user-profile/{{Auth::user()->id}}"><span class="icon nalika-user author-log-ic"></span> My Profile</a>
                                                             </li>
                                                             <!-- <li><a href="lock.html"><span class="icon nalika-diamond author-log-ic"></span> Lock</a>
                                                             </li> -->

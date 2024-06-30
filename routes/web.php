@@ -96,9 +96,9 @@ Route::post('/validate-coupon', [FrontendController::class,'validateCoupon'])->n
 //User Community Token
 Route::get('/home/community_token/{id}', [FrontendController::class, 'buy_community_token'])->name('buy_community_token')->middleware('auth');
 
-Route::post('/home/buy_bmind/store', [FrontendController::class, 'store_bmind'])->name('buy-bmindnew')->middleware('auth');
 
 Route::middleware([PreventDuplicate::class])->group(function(){
+    Route::post('/home/buy_bmind/store', [FrontendController::class, 'store_bmind'])->name('buy-bmindnew')->middleware('auth');
 });
 Route::get('/home/buy-bmind/{id}', [FrontendController::class, 'bmindStages'])->middleware('auth');
 Route::post('/home/bmind/update-daily-bonus', [FrontendController::class, 'bmindDailyBonusUpdate'])->name('bmindDailyBonusUpdate');
