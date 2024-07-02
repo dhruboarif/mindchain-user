@@ -621,8 +621,9 @@ public function joinElite(Request $request)
     $data['sum_deposit']=UsdWallet::where('user_id', Auth::id())
                                ->whereIn('status', ['awaiting', 'approve', 'pending'])
                                ->sum('amount');
-     $data['withdraw']=UsdWallet::where('user_id',Auth::id())->whereIn('status', ['awaiting','pending'])->count();
+     $data['withdraw']=UsdWallet::where('user_id',Auth::id())->whereIn('status', ['awaiting'])->count();
      
+     //dd($data['withdraw']); 
      $currentMonth = Carbon::now()->month;
 
    
