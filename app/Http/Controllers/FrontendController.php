@@ -1599,15 +1599,15 @@ return redirect()->route('send-usdt')
             
             $request->session()->put('form_submitted', true);
 
-            return response()->json([
-              'status' => 'success',
-              'message' => 'Transfer successful'
-          ]);
+          //   return response()->json([
+          //     'status' => 'success',
+          //     'message' => 'Transfer successful'
+          // ]);
 
-            // return back()->with('transfer_fund', 'Fund Transfer Successfully');
+            return back()->with('transfer_fund', 'Fund Transfer Successfully');
       }else
       {
-        // return back()->with('transfer_error', 'You entered wrong code');
+        return back()->with('transfer_error', 'You entered wrong code');
           return response()->json([
                       'status' => '401',
                       'error' => 'Failed, You entered wrong code'

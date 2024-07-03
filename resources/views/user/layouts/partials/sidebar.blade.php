@@ -141,13 +141,13 @@
                                         <ul class="dp-submenu-angle" aria-expanded="false">
                                             <li class="click-active"><a title="" href="/home/withdraw-usd/{{Auth::user()->id}}"><span class="mini-sub-pro">Withdraw USDT</span></a></li>
                                             <li class="click-active"><a title="" href="/home/withdraw/{{Auth::user()->id}}"><span class="mini-sub-pro">Withdraw MUSD</span></a></li>
-                                            <li class="click-active"><a title="" href="/home/send-bonus/{{Auth::user()->id}}"><span class="mini-sub-pro">Withdraw MIND</span></a></li>
+                                            <li class="click-active"><a title="" href="/home/withdraw-bonus/{{Auth::user()->id}}"><span class="mini-sub-pro">Withdraw MIND</span></a></li>
                                         </ul>
                                     </li>
-                                    <li class="click-active"><a title="" href="transfer-fund.html"><span class="mini-sub-pro">Transfer Fund</span></a></li>
-                                    <li class="click-active"><a title="" href="transfer-coin.html"><span class="mini-sub-pro">Transfer Coin</span></a></li>
-                                    <li class="click-active"><a title="" href="transfer-usdt.html"><span class="mini-sub-pro">Transfer USDT</span></a></li>
-                                    <li class="click-active"><a title="" href="transfer-report.html"><span class="mini-sub-pro">Transfer Report</span></a></li>
+                                    <li class="click-active"><a title="" href="/home/fund-transfer/{{Auth::user()->id}}"><span class="mini-sub-pro">Transfer Fund</span></a></li>
+                                    <li class="click-active"><a title="" href="/home/send-bonus/{{Auth::user()->id}}"><span class="mini-sub-pro">Transfer Coin</span></a></li>
+                                    <li class="click-active"><a title="" href="/home/fund-transfer/{{Auth::user()->id}}"><span class="mini-sub-pro">Transfer USDT</span></a></li>
+                                    <li class="click-active"><a title="" href="/home/fund-transfer/{{Auth::user()->id}}"><span class="mini-sub-pro">Transfer Report</span></a></li>
                                 </ul>
                         </li
               

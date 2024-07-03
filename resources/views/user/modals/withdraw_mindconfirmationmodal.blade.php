@@ -1,4 +1,4 @@
-<div class="modal withdraw-modal fade" id="withdrawMusdConfirmation{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal withdraw-modal fade" id="withdrawMindConfirmation{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form method="post" action="{{route('withdraw-store')}}">
+            <form method="post" action="{{route('withdraw-bonus-confirmation')}}">
                 @csrf
                 <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                 <input type="hidden" name="id" value="{{$row->id}}">
