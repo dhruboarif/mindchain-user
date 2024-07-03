@@ -157,8 +157,8 @@
                                                         <td>{{$row->transaction_hash}}</td>
              
                                                     </tr>
-                                                      @include('user.modals.withdrawconfirmationmodal')
-                                                     @include('user.modals.withdrawUsdCancel')
+                                                      @include('user.modals.withdraw_musd_confirmationmodal')
+                                                     @include('user.modals.withdrawMusdCancel')
              
                                                     @endforeach
              
