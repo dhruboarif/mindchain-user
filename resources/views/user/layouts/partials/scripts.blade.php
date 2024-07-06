@@ -87,6 +87,12 @@ $(document).ready( function () {
 $(document).ready( function () {
     $('#myTable4').DataTable();
 } );
+$(document).ready( function () {
+    $('#myTable5').DataTable();
+} );
+$(document).ready( function () {
+    $('#myTable6').DataTable();
+} );
 
 </script>
 

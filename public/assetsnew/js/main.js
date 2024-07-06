@@ -231,4 +231,35 @@ setInterval(fetchMindPrice, 5000);
 			copyIcon.style.display = 'inline';
 		}, 1000);
 	}
+
 	
+	function openWallet(evt, walletName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(walletName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector(".tablinks").click();
+    });
+
+
+	// for show kids age
+
+	function calculateAge() {
+		let dob = new Date(document.getElementById("kids-dob").value);
+		let today = new Date();
+		let age = today.getFullYear() - dob.getFullYear();
+		let month = today.getMonth() - dob.getMonth();
+		if (month < 0 || (month === 0 && today.getDate() < dob.getDate())) {
+			age--;
+		}
+		document.getElementById("kids-age").value = age;
+	}
