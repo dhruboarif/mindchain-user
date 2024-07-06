@@ -231,7 +231,8 @@ class FrontendController extends Controller
   
   public function become_merchant_save(Request $request)
   {
-       if(Auth::user()->status == 0)
+    
+    if(Auth::user()->status == 0)
     {
           return back()->with('purchase_error', 'You are not eligible!!');
     };
@@ -1124,12 +1125,12 @@ class FrontendController extends Controller
   public function send_usdt_store(Request $request)
   {
        if(Auth::user()->status == 0)
-    {
-          return back()->with('transfer_error', 'You are not eligible!!');
-    };
+      {
+            return back()->with('transfer_error', 'You are not eligible!!');
+      };
     
     $data['sum_usdt'] = UsdWallet::where('user_id', Auth::id())
-                               ->whereIn('status', ['awaiting', 'approve'])
+                               ->whereIn('status', ['awaiting', 'approve','pending'])
                                ->sum('amount');
 
     $data['transfer'] = UsdWallet::where('user_id', Auth::id())->where('status', 'pending')->where('method', 'Transfer Money')->count();
@@ -1137,10 +1138,13 @@ class FrontendController extends Controller
     $validator = Validator::make($request->all(), [
         'amount' => "required|numeric|min:10|max:5001|lte:{$data['sum_usdt']}",
     ]);
+   
 
     if ($validator->fails()) {
         return back()->withErrors($validator)->withInput();
     }
+
+   
 
     if ($data['transfer'] > 0) {
         return back()->with('transfer_error', 'You already have a pending transfer request.');

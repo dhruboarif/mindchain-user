@@ -191,7 +191,7 @@ public function joinElite(Request $request)
     {
 
  //dd('Maintance running');
- if(Auth::user()->status == 0)
+  if(Auth::user()->status == 0)
     {
           return back()->with('join_error', 'You are not eligible!!');
     };
