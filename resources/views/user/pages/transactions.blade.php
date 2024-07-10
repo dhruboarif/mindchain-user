@@ -17,7 +17,7 @@
                     </div>
                 </div>
 
-                         <!-- transection section 
+                         <!-- transection section
  ============================================  -->
                 <div class="transection-staus mg-t-30  mg-b-30 all-transection">
                     <div class="container-fluid">
@@ -41,9 +41,9 @@
                                             <p class="breadcome-section-price">{{$data['sum_deposit'] ? '$'.number_format((float)$data['sum_deposit'], 2, '.', '') : '$00.00'}}</p>
                                         </div>
                                     </div>
-                                   
+
                                     <div class="transaction-table">
-                                        <table id="myTable" class="table table-bordered table-border">
+                                        <table id="myTable" class="">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -52,15 +52,15 @@
                                                           <th scope="col">RCVD FRM/PAY TO</th>
                                                              <th scope="col">DESCRIPTION</th>
                                                                 <th scope="col">AMOUNT</th>
-               
+
                                                     <th scope="col">TYPE</th>
                                                             <th scope="col">ACTIONS</th> <!-- Add a column for the details button -->
-               
-               
+
+
                                                 </tr>
                                             </thead>
-               
-               
+
+
                                             @foreach($cashwallet_history as $cash)
                                                 <tr>
                                                    <td >{{$loop->index+1}}</td>
@@ -75,8 +75,8 @@
                                                       @else
                                                       System Transactions
                                                       @endif
-               
-               
+
+
                                                     </td>
                                                     <td>{{$cash->description}}</td>
                                                     <td>{{$cash->amount}}$</td>
@@ -85,18 +85,18 @@
                                                            <!-- Details button trigger -->
                                                            <button class="btn btn-primary btn-details" data-toggle="modal" data-target="#detailsModal{{$loop->index}}">Details</button>
                                                        </td>
-               
+
                                                 </tr>
                @include('user.modals.transaction.cashwalletDetails')
                                                 @endforeach
-               
-               
-               
-               
+
+
+
+
                                             </tbody>
                                         </table>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -109,8 +109,8 @@
                                             <p class="breadcome-section-price">{{$data['sum_deposit_token'] ? number_format((float)$data['sum_deposit_token'], 2, '.', '') : '00.00'}}</p>
                                         </div>
                                     </div>
-                                    
-                                    
+
+
                                     <div class="bd-example table-responsive">
                                         <table id="myTable1" class="table table-bordered table-border">
                                             <thead>
@@ -148,7 +148,7 @@
                                                         <button class="btn btn-primary btn-details" data-toggle="modal" data-target="#detailsModal{{$loop->index}}">Details</button>
                                                     </td>
                                                 </tr>
-                            
+
                                                 <!-- Modal for displaying details -->
                                                 <div class="modal fade" id="detailsModal{{$loop->index}}" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel{{$loop->index}}" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
@@ -195,8 +195,8 @@
                                             <p class="breadcome-section-price">{{$data['sum_deposit_bonus'] ? number_format((float)$data['sum_deposit_bonus'], 2, '.', '') : '00.00'}}</p>
                                         </div>
                                     </div>
-                                    
-                                    
+
+
                                     <table id="myTable2" class="table table-bordered table-border">
                                         <thead>
                                             <tr>
@@ -206,14 +206,14 @@
                                                     <th scope="col">RCVD FRM/PAY TO</th>
                                                        <th scope="col">DESCRIPTION</th>
                                                           <th scope="col">AMOUNT</th>
-       
+
                                               <th scope="col">TYPE</th>
                                               <th scope="col">STATUS</th>
-       
+
                                             </tr>
                                         </thead>
-       
-       
+
+
                                         @foreach($bonuswallet_history as $bonus)
                                             <tr>
                                                <td >{{$loop->index+1}}</td>
@@ -228,8 +228,8 @@
                                                   @else
                                                   System Transactions
                                                   @endif
-       
-       
+
+
                                                 </td>
                                                 <td>{{$bonus->description}}</td>
                                                 <td>{{$bonus->amount}} MIND</td>
@@ -251,7 +251,7 @@
                                             <p class="breadcome-section-price">{{$data['sum_deposit_staking'] ? number_format((float)$data['sum_deposit_staking'], 2, '.', '') : '00.00'}}</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="transaction-table">
                                         <table id="myTable3" class="table table-bordered table-border">
                                             <thead>
@@ -291,13 +291,13 @@
                                                         <button class="btn btn-primary btn-details" data-toggle="modal" data-target="#bonusdetailsModal{{$loop->index}}">Details</button>
                                                     </td>
                                                 </tr>
-                            
+
                                                @include('user.modals.transaction.stakingwalletDetails')
                                                 @endforeach
                                             </tbody>
                                         </table>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -310,7 +310,7 @@
                                             <p class="breadcome-section-price">{{$data['sum_usd_wallet'] ? number_format((float)$data['sum_usd_wallet'], 2, '.', '') : '00.00'}}</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="transaction-table">
                                         <table id="myTable4" class="table table-bordered table-border">
                                             <thead>
@@ -350,13 +350,13 @@
                                                         <button class="btn btn-primary btn-details" data-toggle="modal" data-target="#usddetailsModal{{$loop->index}}">Details</button>
                                                     </td>
                                                 </tr>
-                            
+
                                                 @include('user.modals.transaction.usdwalletDetails')
                                                 @endforeach
                                             </tbody>
                                         </table>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -369,7 +369,7 @@
                                             <p class="breadcome-section-price">{{$data['sum_deposit_ambassador'] ? number_format((float)$data['sum_deposit_ambassador'], 2, '.', '') : '00.00'}}</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="transaction-table">
                                         <table id="myTable5" class="table table-bordered table-border">
                                             <thead>
@@ -414,7 +414,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -427,7 +427,7 @@
                                             <p class="breadcome-section-price">{{$data['sum_deposit_coupon'] ? number_format((float)$data['sum_deposit_coupon'], 2, '.', '') : '$00.00'}}</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="transaction-table">
                                         <table id="myTable6" class="table table-bordered table-border">
                                             <thead>
@@ -467,22 +467,22 @@
                                                         <button class="btn btn-primary btn-details" data-toggle="modal" data-target="#couponwalletdetailsModal{{$loop->index}}">Details</button>
                                                     </td>
                                                 </tr>
-                            
+
                                                 @include('user.modals.transaction.couponwalletDetails')
                                                 @endforeach
                                             </tbody>
                                         </table>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <!-- transection Token Wallet section 
+            <!-- transection Token Wallet section
             ============================================  -->
             </div>
-        </div>           
+        </div>
     </div>
 </div>
 
@@ -491,7 +491,7 @@
     // JavaScript to handle click event on the details button
     $(document).ready(function() {
         $('.btn-details').click(function() {
-            //console.log('working'); 
+            //console.log('working');
             // Clear any previous modal body content
             $('#detailsModal .modal-body').empty();
             // Get the details content for the corresponding row
@@ -500,8 +500,8 @@
             $('#detailsModal .modal-body').html(detailsContent);
         });
     });
-    
- 
+
+
 </script>
 
 

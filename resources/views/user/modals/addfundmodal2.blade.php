@@ -15,10 +15,10 @@
                     <?php
                     $account_info = App\Models\AccountInfo::where('payment_type_id', '!=', 2)->get();
                     ?>
-                    <div class="form-group">
-                        <label for="selectMusdDepositAddress" class="col-form-label">Select Wallet</label>
-                        <select class="form-select form-control" name="payment_wallet_id" id="selectMusdDepositAddress"
-                            aria-label="Default select example" onchange="musdDepositWallet()">
+                    <div class="form-group" data-section="3">
+                        <label for="selectWallet3" class="col-form-label">Select Wallet</label>
+                        <select class="form-select form-control" name="payment_wallet_id" id="selectWallet3"
+                            aria-label="Default select example" onchange="selectWallet(3)">
                             <option selected disabled>choose Wallet</option>
                             @foreach ($account_info as $payment)
                                 <option id="{{ $payment->wallet_no }}" value="{{ $payment->wallet_no }}">
@@ -27,12 +27,12 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="musdDepositAddress" class="col-form-label">Wallet Address</label>
-                        <input type="text" class="form-control" name="wallet_id" id="musdDepositAddress">
-                        <button class="copy-button" onclick="copyMusdDepositWallet(event)">
-                            <i class="fa-solid fa-copy copy-musd-depo-wall"></i>
-                            <i class="fa-solid fa-clipboard clipboard-musd-depo-wall text-warning"></i>
+                    <div class="form-group" data-section="3">
+                        <label for="copyAddress3" class="col-form-label">Wallet Address</label>
+                        <input type="text" class="form-control" name="wallet_id" id="copyAddress3">
+                        <button class="copy-button" onclick="copyWallet(event, 3)">
+                            <i class="fa-solid fa-copy copy-icon"></i>
+                            <i class="fa-solid fa-clipboard clipboard-icon text-warning"></i>
                         </button>
                     </div>
                     <div class="form-group">

@@ -58,7 +58,7 @@
                                                 @csrf
                                 <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                                               <div class="form-group">
-                                                
+
                           <?php
                 $payment_method= App\Models\UserWallet::where('user_id',Auth::user()->id)->get();
 
@@ -89,7 +89,7 @@
                                                   <label for="usdt-amount-deposit" class="col-form-label">Amount (USDT)</label>
                                                   <input type="number" min="{{$withdraw_commission->withdraw_limit_min}}" max="{{$withdraw_commission->withdraw_limit_max}}" type="text" class="form-control" name="amount" id="amount">
                                                 </div>
-                                               
+
                                         </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
@@ -98,11 +98,11 @@
                                         <div class="modal-footer">
                                             <h6>Withdraw limit USDT( >= {{$withdraw_commission->withdraw_limit_min}} & <= {{$withdraw_commission->withdraw_limit_max}})</h6>
                                           </div>
-                                       
+
                                     </form>
-                                    
+
                                       </div>
-                                      
+
                                     </div>
                                 </div>
                         </div>
@@ -115,36 +115,36 @@
                                     <div class="transaction-status-wrap">
 
                                         <div class="transaction-table">
-                                            <table id="myTable" class="table table-bordered table-border">
+                                            <table id="myTable" class="">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
-             
+
                                                            <th scope="col"> MY WALLET</th>
                                                               <th scope="col">REQUEST DATE</th>
                                                                  <th scope="col">AMOUNT</th>
                                                                   <th scope="col">CASHABLE AMOUNT</th>
                                                                  <th scope="col">WALLET ID</th>
-             
+
                                                                     <th scope="col">STATUS</th>
-             
+
                                                         <th scope="col">APPROVAL DATE</th>
                                                         <th scope="col">TRANSACTION HASH</th>
-             
+
                                                     </tr>
                                                 </thead>
                                                 @foreach($data['withdrawbonus'] as $row)
-             
+
                                                     <tr>
                                                        <td >{{$loop->index+1}}</td>
-             
+
                                                         <td>
                                                          {{$row->wallet->wallet_name}}
                                                         </td>
                                                         <td>{{$row->created_at}}</td>
                                                         <td>{{$row->amount}}</td>
                                                          <td>{{$row->payable}}</td>
-             
+
                                                          <td>
                                                          @if($row->status == 'awaiting')
                                                          <a data-toggle="modal" data-target="#withdrawMindConfirmation{{$row->id}}" class="btn btn-danger">Confirm Withdraw</a>
@@ -155,15 +155,15 @@
                                                      @endif</td>
                                                         <td>{{$row->updated_at}}</td>
                                                         <td>{{$row->transaction_hash}}</td>
-             
+
                                                     </tr>
                                                       @include('user.modals.withdraw_mindconfirmationmodal')
                                                      @include('user.modals.withdrawMindCancel')
-             
+
                                                     @endforeach
-             
-             
-             
+
+
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -209,6 +209,6 @@
             });
         </script>
 
-   
+
     @endpush
 @endsection

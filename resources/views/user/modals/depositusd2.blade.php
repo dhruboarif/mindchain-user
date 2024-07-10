@@ -41,7 +41,7 @@
                             <input type="text" name="wallet_id2" disabled id="wallet_id_usd2" class="form-control"required/>
                         </div>
                          <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Amount ($)</label>
+                            <label for="exampleInputEmail1" class="form-label">Amount($)</label>
                             <input type="number" class="form-control" name="amount" placeholder="Enter Amount" id="exampleInputEmail1" aria-describedby="emailHelp" required min="10" max="5001" step="0.01">
                         </div>
                          <div class="mb-3">
@@ -49,7 +49,7 @@
                             <input type="text" name="txn_id" class="form-control" required/>
                         </div>
 
-                      
+
                               </div>
                           </div>
                       </div>

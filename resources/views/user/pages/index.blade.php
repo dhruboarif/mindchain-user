@@ -16,9 +16,9 @@
         </div>
         <!-- mobile screen mind price section end
             ============================================ -->
-            @php 
+            @php
             $token_rate= App\Models\TokenRate::first();
-            
+
             @endphp
 <div class="section-admin container-fluid">
             <div class="row admin text-center">
@@ -47,7 +47,7 @@
                                             <img class="" src="{{asset('assetsnew/img/img-icon/elite.png')}}" alt="">
                                         </div>
                                     </div>
-                                    <div class="copy-container prof-url">
+                                    <div class="copy-container prof-url ">
                                         <p class="cp-url">Invite: <span class="invt text-lowercase" id="urlText"> my.mind....r/ref?FERFWE3</span></p>
                                         <button class="copy-button" onclick="copyURL()">
                                         <i class="fa-solid fa-copy copy-icon"></i>
@@ -82,8 +82,8 @@
                                                     @include('user.modals.depositmind')
 
                                             </div>
-                          
-                                            
+
+
                                             <div class="wallet-btn">
                                                 <button type="button" data-toggle="modal" data-target="#mindWithdraw"   data-whatever="" class="btn btn-sm withdraw text-capitalize"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M9.25391 5.83572C9.39844 5.76932 9.52734 5.6326 9.58203 5.48807C9.60938 5.41775 9.625 4.84744 9.625 3.8865L9.625 2.39822L10.1016 2.87088C10.6172 3.37869 10.7109 3.42947 11.0195 3.37088C11.2109 3.33572 11.4453 3.10135 11.4805 2.90994C11.5469 2.56619 11.543 2.55838 10.375 1.39041C9.20703 0.222442 9.20313 0.218536 8.85156 0.284942C8.72656 0.304473 8.55859 0.456817 7.625 1.39041C6.45703 2.55838 6.45313 2.56619 6.51953 2.90994C6.55469 3.10135 6.78906 3.33572 6.98047 3.37088C7.28906 3.42947 7.38281 3.37869 7.89453 2.87088L8.37109 2.40213L8.38281 3.949C8.39453 5.44119 8.39844 5.49979 8.47656 5.60135C8.51953 5.65994 8.60156 5.74588 8.65625 5.78494C8.78906 5.8826 9.09766 5.90994 9.25391 5.83572Z" fill="white"/>
@@ -93,7 +93,7 @@
                                                     <path d="M3.39351 11.1537C2.98423 11.6963 2.87031 13.3116 3.16566 14.3211C3.34287 14.9142 3.52009 15.0404 4.09813 14.9899C4.62976 14.9521 4.71837 14.8511 4.90824 14.0813C5.0306 13.5892 5.0306 12.403 4.90824 11.9109C4.71415 11.1285 4.63398 11.0402 4.05594 11.0023C3.67198 10.9897 3.48211 11.0275 3.39351 11.1537Z" fill="white"/>
                                                     </svg>
                                                    <span>withdraw</span> </button>
-                                                   
+
                                                    <div class="modal withdraw-modal fade" id="mindWithdraw" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                       <div class="modal-content">
@@ -143,9 +143,9 @@
                                             </div>
                                             <!--  Mind withdraw button end
 		============================================ -->
-        
-                                           
-		
+
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -260,7 +260,7 @@
                                                             <rect width="25" height="25" fill="#ff971d"/>
                                                             </clipPath>
                                                             </defs>
-                                                            </svg>      
+                                                            </svg>
                                                         </div>
                                                         <div class="name">marchent wallet</div>
                                                     </a>
@@ -271,7 +271,7 @@
                                                     <a href="">
                                                         <div class="icon"><svg class="icon-wrap" width="25" height="25" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M7 1.5C6.09375 1.5 5.28125 2 4.8125 2.75C4.375 3.53125 4.375 4.5 4.8125 5.25C5.28125 6.03125 6.09375 6.5 7 6.5C7.875 6.5 8.6875 6.03125 9.15625 5.25C9.59375 4.5 9.59375 3.53125 9.15625 2.75C8.6875 2 7.875 1.5 7 1.5ZM7 8C5.5625 8 4.25 7.25 3.53125 6C2.8125 4.78125 2.8125 3.25 3.53125 2C4.25 0.78125 5.5625 0 7 0C8.40625 0 9.71875 0.78125 10.4375 2C11.1562 3.25 11.1562 4.78125 10.4375 6C9.71875 7.25 8.40625 8 7 8ZM5.5625 11C3.5 11 1.8125 12.5312 1.53125 14.5H12.4375C12.1562 12.5312 10.4688 11 8.40625 11H5.5625ZM5.5625 9.5H8.40625C11.5 9.5 14 12 14 15.0938C14 15.5938 13.5625 16 13.0625 16H0.90625C0.40625 16 0 15.5938 0 15.0938C0 12 2.46875 9.5 5.5625 9.5ZM15.75 9.75V7.75H13.75C13.3125 7.75 13 7.4375 13 7C13 6.59375 13.3125 6.25 13.75 6.25H15.75V4.25C15.75 3.84375 16.0625 3.5 16.5 3.5C16.9062 3.5 17.25 3.84375 17.25 4.25V6.25H19.25C19.6562 6.25 20 6.59375 20 7C20 7.4375 19.6562 7.75 19.25 7.75H17.25V9.75C17.25 10.1875 16.9062 10.5 16.5 10.5C16.0625 10.5 15.75 10.1875 15.75 9.75Z" fill="#ff971d"/>
-                                                            </svg>           
+                                                            </svg>
                                                         </div>
                                                         <div class="name">Affiliate</div>
                                                     </a>
@@ -290,7 +290,7 @@
                                                             <rect width="25" height="25" fill="#ff971d"/>
                                                             </clipPath>
                                                             </defs>
-                                                            </svg>    
+                                                            </svg>
                                                         </div>
                                                         <div class="name">wallet</div>
                                                     </a>
@@ -405,9 +405,6 @@
                                                       </div>
                                                     </div>
                                                   </div>
-                                                  <a href="/home/buy_staking/{{Auth::user()->id}}"><button type="button" class="btn btn-sm stake text-capitalize"><span>Stake</span></button></a>
-                                                
-                               
                                             </div>
                                             <div class="coin-img">
                                                 <img src="img/img-icon/MUSD Icon-01.png" alt="">
@@ -521,55 +518,6 @@
                                                       </div>
                                                     </div>
                                                   </div>
-                                                  <a href="/home/buy-bmind/{{Auth::user()->id}}">
-                                                <button type="button" class="btn btn-sm stake text-capitalize">
-                                                <span>Stake</span></button>
-                                            </a>
-                                                <div class="modal stake-modal fade" id="bmindStake" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                      <div class="modal-content">
-                                                        <div class="modal-header">
-                                                          <h5 class="modal-title">BMIND Stake</h5>
-                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                          </button>
-                                                        </div>
-                                                        
-                                                        <div class="modal-body m-stake">
-                                                            <form>
-                                                              <div class="form-group d-flex">
-                                                                <label for="bmindAvlBal" class="col-form-label">Available Balance ($)</label>
-                                                                <input type="text" class="form-control" disabled id="bmindAvlBal" value="$500.0000">
-                                                              </div>
-                                                              <div class="form-group">
-                                                                  <label for="bmindStakePrice" class="col-form-label">BMIND Price ($)</label>
-                                                                  <input type="text" class="form-control" disabled id="bmindStakePrice" value="0.4154">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                  <label for="bmind-amount-stake" class="col-form-label">Quantity (BMIND)</label>
-                                                                  <input type="text" class="form-control" id="bmind-amount-stake">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                  <label for="bmind-tv-stake" class="col-form-label">Total Values ($)</label>
-                                                                  <input type="text" class="form-control" disabled id="bmind-tv-stake">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="bmind-tv-stake" class="col-form-label">Saaking Fee (%)</label>
-                                                                    <input type="text" class="form-control" disabled id="bmind-tv-stake">
-                                                                  </div>
-                                                                  <div class="form-group">
-                                                                    <label for="bmind-tv-stake" class="col-form-label">Payable ($)</label>
-                                                                    <input type="text" class="form-control" disabled id="bmind-tv-stake">
-                                                                  </div>
-                                                            </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                                          <button type="button" class="btn btn-primary">Stake</button>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
                                             </div>
                                             <div class="coin-img">
                                                 <img src="img/img-icon/BMIND Icon-01.png" alt="">
@@ -577,7 +525,7 @@
                                         </div>
                                     </div><!-- BMIND wallet End
                                         ============================================ -->
-                                    
+
                                         <!-- USDT Wallet
             ============================================ -->
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ot-wallet ot-wall2">
@@ -604,19 +552,19 @@
                                                         </div>
                                                         <div class="modal-body">
                                                             <form>
-                                                              <div class="form-group">
-                                                                <label for="selectUsdtWithdrawWallet" class="col-form-label">Select Wallet</label>
-                                                                <select class="form-select form-control" id="selectUsdtWithdrawWallet" aria-label="Default select example" onchange="UsdtWithdrawWallet()">
+                                                              <div class="form-group" data-section="6">
+                                                                <label for="selectWallet6" class="col-form-label">Select Wallet</label>
+                                                                <select class="form-select form-control" id="selectWallet6" aria-label="Default select example" onchange="selectWallet(6)">
                                                                   <option selected disabled>Choose Wallet</option>
                                                                   <option value="dvvaergvSGDgawrg">dvvaergvSGDgawrg</option>
                                                                   <option value="sgrgwetgWEFWARG">sgrgwetgWEFWARG</option>
                                                                   <option value="eyahrwgawrtargaer">eyahrwgawrtargaer</option>
                                                                 </select>
                                                               </div>
-                                                              <div class="form-group">
-                                                                  <label for="usdt-address-withdraw" class="col-form-label">Wallet Address</label>
-                                                                  <input type="text" class="form-control" id="usdtWithdrawAddress">
-                                                                  <button class="copy-button" onclick="copyUsdtWithdrawWallet(event)">
+                                                              <div class="form-group" data-section="6">
+                                                                  <label for="copyAddress6" class="col-form-label">Wallet Address</label>
+                                                                  <input type="text" class="form-control" id="copyAddress6">
+                                                                  <button class="copy-button" onclick="copyWallet(event, 6)">
                                                                       <i class="fa-solid fa-copy copy-usdt-with-wall"></i>
                                                                           <i class="fa-solid fa-clipboard clipboard-usdt-with-wall text-warning"></i>
                                                                       </button>
@@ -634,36 +582,6 @@
                                                         <div class="modal-footer">
                                                           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                                           <button type="button" class="btn btn-primary">Withdraw</button>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                <button type="button" style="padding: 5px !important;" data-toggle="modal" data-target="#usdtTransfer" data-whatever="" class="btn btn-sm stake text-capitalize">
-                                                <span>Transfer</span></button>
-                                                <div class="modal stake-modal fade" id="usdtTransfer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                      <div class="modal-content">
-                                                        <div class="modal-header">
-                                                          <h5 class="modal-title">USDT Transfer</h5>
-                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                          </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form>
-                                                                  <div class="form-group">
-                                                                    <div class="form-group">
-                                                                      <label for="usdt-fund-transfer" class="col-form-label">Fund Transfer To</label>
-                                                                      <input type="text" class="form-control" id="usdt-fund-transfer">
-                                                                    </div>
-                                                                    <label for="usdt-amount-transfer" class="col-form-label">Amount (USDT)</label>
-                                                                    <input type="number" class="form-control" id="usdt-amount-transfer" required pattern="[0-9]*" min="1" max="500000">
-                                                                  </div>
-                                                              </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                                          <button type="button" class="btn btn-primary">Transfer</button>
                                                         </div>
                                                       </div>
                                                     </div>
@@ -792,12 +710,12 @@
                                                                             </svg> stake</button>
                                                                     </div>
                                                                 </div>
-                                                                
+
 
                                                             </div>
                                                         </div>
 
-                                                        
+
                                                         <div class="col-lg-12 col-md-12 col-sm-12 st-wallet-titel">
                                                             <div class="row d-flex justify-content-between">
                                                                 <div class="col-lg-2 col-md-2 col-sm-2">
@@ -928,11 +846,11 @@
                                                                             <svg fill="#ffffff" width="27px" height="20px" viewBox="0 0 512.00 512.00" enable-background="new 0 0 512 512" id="Ticket" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#ffffff" stroke-width="0.00512">
 
                                                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                                                                                
+
                                                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                                
+
                                                                                 <g id="SVGRepo_iconCarrier"> <g> <g> <path d="M445.084,139.6H65.368c0,21.996-17.34,39.84-39.06,39.84v153.121c21.72,0,39.06,17.844,39.06,39.84h379.716 c0-21.996,17.328-39.84,40.607-39.84V179.439C462.412,179.439,445.084,161.596,445.084,139.6z M445.168,311.596 c-16.896,0-29.484,12.948-29.484,28.92H95.188c0-15.972-12.588-28.92-28.356-28.92V200.403c15.768,0,28.356-12.947,28.356-28.92 h320.496c0,15.973,12.588,28.92,29.484,28.92V311.596z"/> <path d="M397.064,248.666l-9.622-1.398c-0.731-0.106-1.364-0.565-1.692-1.229l-4.305-8.722c-0.824-1.671-3.207-1.671-4.031,0 l-4.305,8.722c-0.328,0.664-0.961,1.123-1.693,1.229l-9.624,1.398c-1.844,0.269-2.58,2.534-1.246,3.835l6.962,6.786 c0.529,0.518,0.771,1.261,0.646,1.99l-1.644,9.588c-0.314,1.837,1.612,3.236,3.262,2.37l8.61-4.526 c0.655-0.345,1.438-0.345,2.093,0l8.608,4.525c1.649,0.867,3.577-0.534,3.262-2.371l-1.647-9.586 c-0.125-0.729,0.116-1.474,0.647-1.99l6.965-6.786C399.645,251.2,398.909,248.934,397.064,248.666z"/> <path d="M331.407,248.666l-9.628-1.398c-0.733-0.106-1.367-0.566-1.693-1.23l-4.299-8.718c-0.824-1.671-3.207-1.672-4.032-0.001 l-4.304,8.72c-0.327,0.664-0.961,1.123-1.693,1.229l-9.629,1.398c-1.844,0.269-2.58,2.534-1.245,3.835l6.966,6.786 c0.529,0.518,0.771,1.262,0.646,1.99l-1.643,9.588c-0.314,1.837,1.612,3.236,3.262,2.37l8.611-4.526 c0.654-0.345,1.437-0.345,2.092,0l8.607,4.525c1.65,0.867,3.578-0.534,3.262-2.371l-1.646-9.586 c-0.125-0.729,0.116-1.474,0.646-1.99l6.965-6.786C333.987,251.2,333.251,248.935,331.407,248.666z"/> <path d="M265.747,248.666l-9.62-1.398c-0.732-0.106-1.365-0.565-1.692-1.229l-4.307-8.723c-0.825-1.67-3.207-1.67-4.032,0.001 l-4.305,8.722c-0.328,0.664-0.96,1.123-1.693,1.229l-9.623,1.398c-1.844,0.268-2.58,2.534-1.246,3.835l6.963,6.786 c0.53,0.517,0.772,1.262,0.646,1.99l-1.645,9.588c-0.315,1.836,1.612,3.236,3.261,2.369l8.61-4.525 c0.655-0.345,1.437-0.345,2.092,0l8.611,4.525c1.648,0.867,3.576-0.534,3.261-2.371l-1.647-9.586 c-0.125-0.729,0.117-1.474,0.646-1.99l6.963-6.786C268.327,251.2,267.592,248.934,265.747,248.666z"/> <rect height="20.23" width="18" x="167.737" y="305.355"/> <rect height="20.23" width="18" x="167.737" y="264.896"/> <rect height="20.229" width="18" x="167.737" y="224.436"/> <rect height="20.229" width="18" x="167.737" y="183.976"/> <rect height="18" width="41.549" x="96.59" y="245.782"/> <rect height="18" width="41.549" x="96.59" y="279.632"/> <rect height="18" width="41.549" x="96.59" y="211.932"/> </g> </g> </g>
-                                                                                
+
                                                                                 </svg>Coupon</button>
                                                                     </div>
                                                                 </div>
@@ -1029,9 +947,9 @@
                             </div><!-- Price and Offer Section END
                                 ============================================ -->
                             <?php
-             
+
                                 $User = App\Models\User::where('id',Auth::id())->first();
-            
+
                             ?>
                             <!-- BMIND Target
 		============================================ -->
@@ -1071,7 +989,7 @@
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <!-- transection Cash Wallet section 
+                        <!-- transection Cash Wallet section
      ============================================  -->
                 <div class="transection-staus mg-t-30  mg-b-30">
                     <div class="container-fluid">
@@ -1104,25 +1022,25 @@
                                                   <td>{{$cr->type}}</td>
                                                   <td>
                                                     @if($cr->description != null)
-                           
+
                                                     {{$cr->description}}
                                                     @else
-                           
+
                                                     @endif
-                           
+
                                                   </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
                                         </table>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- transection Token Wallet section 
+                <!-- transection Token Wallet section
                 ============================================  -->
 
                 <div class="transection-staus">
@@ -1144,7 +1062,7 @@
                                             </thead>
                                             <?php
                                             $cashwallet_tr =App\Models\AddMoney::where('user_id',Auth::id())->latest()->take(10)->get();
-                             
+
                                              ?>
                                                <tbody>
                                                  @foreach($cashwallet_tr as $cr)
@@ -1155,35 +1073,35 @@
                                                     <td>{{$cr->type}}</td>
                                                     <td>
                                                       @if($cr->description != null)
-                             
+
                                                       {{$cr->description}}
                                                       @else
-                             
+
                                                       @endif
-                             
+
                                                     </td>
                                                   </tr>
                                                   @endforeach
-                             
+
                                                </tbody>
                                         </table>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
                 </div>
             </div>
         </div>
 
-        
 
-        @include('user.modals.mind_stake')
 
-       
+        {{-- @include('user.modals.mind_stake') --}}
+
+
 
 
 @push('scripts')
@@ -1203,7 +1121,7 @@
                 });
 
 
-        
+
     </script>
 
 
@@ -1214,7 +1132,7 @@
     //     var usdBalance = document.getElementById("usd_balance").value;
     //     var musdBalance = document.getElementById("musd_balance").value;
 
-    //     console.log(musdBalance); 
+    //     console.log(musdBalance);
     //     // Event listener for when the select dropdown changes
     //     walletTypeSelect.addEventListener("change", function() {
     //         var selectedWallet = walletTypeSelect.value;
@@ -1231,7 +1149,7 @@
     // });
 
 
-   
+
 
 </script>
 

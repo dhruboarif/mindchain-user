@@ -63,7 +63,7 @@
                                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                                 <div class="form-group">
                                 <?php
-                                
+
                                     $settings= App\Models\TransferInfo::first();
                                     $data['sum_usdt_wallet'] = App\Models\UsdWallet::where('user_id', Auth::id())
                                 ->whereIn('status', ['awaiting', 'approve', 'pending'])
@@ -110,7 +110,7 @@
                                     <div class="transaction-status-wrap">
 
                                         <div class="transaction-table">
-                                            <table id="myTable" class="table table-bordered table-border">
+                                            <table id="myTable" class="">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>

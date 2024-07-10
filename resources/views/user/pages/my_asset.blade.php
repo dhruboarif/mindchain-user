@@ -11,7 +11,7 @@
                         <a class="btn btn-primary float-right" href="#" data-bs-toggle="modal" data-bs-target="#accountinfoadd">Add New User</a>
                         <hr>
                         <div class="bd-example table-responsive">
-                               <table id="myTable" class="table table-bordered table-border">
+                               <table id="myTable" class="">
                                    <thead>
                                        <tr>
                                            <th scope="col">#</th>
@@ -56,12 +56,12 @@
                                              @if(($row->packages->duration)-($diff_in_days)< 0)
                                             <td>{{$row->packages->duration}}</td>
                                             <td>0</td>
-                                            
-                                            @else 
-                                            
+
+                                            @else
+
                                             <td>{{$diff_in_days}}</td>
                                             <td>{{($row->packages->duration)-($diff_in_days)}}</td>
-                                            
+
                                             @endif
 
                                        </tr>

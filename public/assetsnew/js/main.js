@@ -4,7 +4,7 @@
 	/*----------------------------
 	 jQuery MeanMenu
 	------------------------------ */
-	jQuery('nav#dropdown').meanmenu();	
+	jQuery('nav#dropdown').meanmenu();
 	/*----------------------------
 	 jQuery myTab
 	------------------------------ */
@@ -25,24 +25,24 @@
 		  e.preventDefault()
 		  $(this).tab('show')
 		});
-	
-	$('[data-toggle="tooltip"]').tooltip(); 
-	
+
+	$('[data-toggle="tooltip"]').tooltip();
+
 	$('#sidebarCollapse').on('click', function () {
                      $('#sidebar').toggleClass('active');
-                     
+
                  });
 		// Collapse ibox function
 			$('#sidebar ul li').on('click', function () {
 				var button = $(this).find('i.fa.indicator-mn');
 				button.toggleClass('fa-plus').toggleClass('fa-minus');
-				
+
 			});
 	/*-----------------------------
 			Menu Stick
 		---------------------------------*/
 		$(".sicker-menu").sticky({topSpacing:0});
-			
+
 		$('#sidebarCollapse').on('click', function () {
 			$("body").toggleClass("mini-navbar");
 			SmoothlyMenu();
@@ -50,21 +50,21 @@
 		$(document).on('click', '.header-right-menu .dropdown-menu', function (e) {
 			  e.stopPropagation();
 			});
- 
-	
+
+
 /*----------------------------
  wow js active
 ------------------------------ */
  new WOW().init();
- 
+
 /*----------------------------
  owl active
------------------------------- */  
+------------------------------ */
   $("#owl-demo").owlCarousel({
-      autoPlay: false, 
+      autoPlay: false,
 	  slideSpeed:2000,
 	  pagination:false,
-	  navigation:true,	  
+	  navigation:true,
       items : 4,
 	  /* transitionStyle : "fade", */    /* [This code for animation ] */
 	  navigationText:["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
@@ -76,7 +76,7 @@
 
 /*----------------------------
  price-slider active
------------------------------- */  
+------------------------------ */
 	  $( "#slider-range" ).slider({
 	   range: true,
 	   min: 40,
@@ -87,19 +87,19 @@
 	   }
 	  });
 	  $( "#amount" ).val( "£" + $( "#slider-range" ).slider( "values", 0 ) +
-	   " - £" + $( "#slider-range" ).slider( "values", 1 ) );  
-	   
+	   " - £" + $( "#slider-range" ).slider( "values", 1 ) );
+
 /*--------------------------
  scrollUp
----------------------------- */	
+---------------------------- */
 	$.scrollUp({
         scrollText: '<i class="fa fa-angle-up"></i>',
         easingType: 'linear',
         scrollSpeed: 900,
         animation: 'fade'
-    }); 	   
- 
-})(jQuery); 
+    });
+
+})(jQuery);
 
 // click to active sidebar
 
@@ -113,7 +113,7 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-// Timer counter start 
+// Timer counter start
 $(document).ready(function () {
 	var myDate = new Date("july 28, 2024 15:37:25");
 	myDate.setDate(myDate.getDate());
@@ -125,7 +125,7 @@ $(document).ready(function () {
 		);
 	});
 
-});// Timer counter end 
+});// Timer counter end
 
 // copy url
 function copyURL() {
@@ -202,7 +202,7 @@ fetchMindPrice();
 setInterval(fetchMindPrice, 5000);
 
 
-// wallet copy 
+// wallet copy
 
 
 
@@ -211,28 +211,28 @@ setInterval(fetchMindPrice, 5000);
 		const input = document.getElementById(`copyAddress${section}`);
 		input.value = select.value;
 	}
-	
+
 	function copyWallet(event, section) {
 		const walletInput = document.getElementById(`copyAddress${section}`);
 		walletInput.select();
 		walletInput.setSelectionRange(0, 99999);
 		event.preventDefault();
 		document.execCommand('copy');
-	
+
 		const sectionElement = document.querySelector(`.form-group[data-section="${section}"]`);
 		const copyIcon = sectionElement.querySelector('.copy-icon');
 		const clipboardIcon = sectionElement.querySelector('.clipboard-icon');
-	
+
 		copyIcon.style.display = 'none';
 		clipboardIcon.style.display = 'inline';
-	
+
 		setTimeout(() => {
 			clipboardIcon.style.display = 'none';
 			copyIcon.style.display = 'inline';
 		}, 1000);
 	}
 
-	
+
 	function openWallet(evt, walletName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");

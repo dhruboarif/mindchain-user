@@ -48,7 +48,7 @@
                                     <div class="modal-dialog" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
-                                          <h5 class="modal-title">Make withdraw request</h5>
+                                          <h4 class="modal-title">Make withdraw request</h4>
                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                           </button>
@@ -57,14 +57,14 @@
                                             <form method="post" action="{{route('withdrawUsdStore')}}">
                                                 @csrf
                                 <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                                              <div class="form-group">
-                                                
+                                              <div class="form-group" data-section="4">
+
                           <?php
                           $payment_method= App\Models\UserWallet::where('user_id',Auth::user()->id)->get();
 
                            ?>
-                                                <label for="selectUsdtDepositWalletMenu" class="col-form-label">Select Wallet</label>
-                                                <select class="form-select form-control" id="DestinationOptions" name="wallet_method_id"  aria-label="Default select example" required onchange="UsdtDepositWalletMenu()">
+                                                <label for="selectWallet4" class="col-form-label">Select Wallet</label>
+                                                <select class="form-select form-control" id="selectWallet4" name="wallet_method_id"  aria-label="Default select example" required onchange="selectWallet(4)">
                                                   <option selected disabled>choose Wallet</option>
                                                   @foreach($payment_method as $payment)
 
@@ -72,12 +72,12 @@
                                                     @endforeach
                                                 </select>
                                               </div>
-                                              <div class="form-group">
-                                                  <label for="usdtDepositAddressMenu" class="col-form-label">Wallet Address</label>
-                                                  <input type="text" class="form-control" name="wallet_no" id="wallet_id" readonly>
-                                                  <button class="copy-button" onclick="copyUsdtDepositWalletMenu(event)">
-                                                      <i class="fa-solid fa-copy copy-usdt-depo-wall-menu"></i>
-                                                          <i class="fa-solid fa-clipboard clipboard-usdt-depo-wall-menu text-warning"></i>
+                                              <div class="form-group" data-section="4">
+                                                  <label for="copyAddress4" class="col-form-label">Wallet Address</label>
+                                                  <input type="text" class="form-control" name="wallet_no" id="copyAddress4" readonly>
+                                                  <button class="copy-button" onclick="copyWallet(event, 4)">
+                                                      <i class="fa-solid fa-copy copy-icon"></i>
+                                                          <i class="fa-solid fa-clipboard clipboard-icon text-warning"></i>
                                                       </button>
                                                 </div>
 
@@ -88,7 +88,7 @@
                                                   <label for="usdt-amount-deposit" class="col-form-label">Amount (USDT)</label>
                                                   <input type="number" min="{{$withdraw_commission->withdraw_limit_min}}" max="{{$withdraw_commission->withdraw_limit_max}}" type="text" class="form-control" name="amount" id="amount">
                                                 </div>
-                                               
+
                                         </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
@@ -97,11 +97,11 @@
                                         <div class="modal-footer">
                                             <h6>Withdraw limit USDT( >= {{$withdraw_commission->withdraw_limit_min}} & <= {{$withdraw_commission->withdraw_limit_max}})</h6>
                                           </div>
-                                       
+
                                     </form>
-                                    
+
                                       </div>
-                                      
+
                                     </div>
                                 </div>
                         </div>
@@ -114,36 +114,36 @@
                                     <div class="transaction-status-wrap">
 
                                         <div class="transaction-table">
-                                            <table id="myTable" class="table table-bordered table-border">
+                                            <table id="myTable" class="">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
-             
+
                                                            <th scope="col"> MY WALLET</th>
                                                               <th scope="col">REQUEST DATE</th>
                                                                  <th scope="col">AMOUNT</th>
                                                                   <th scope="col">CASHABLE AMOUNT</th>
                                                                  <th scope="col">WALLET ID</th>
-             
+
                                                                     <th scope="col">STATUS</th>
-             
+
                                                         <th scope="col">APPROVAL DATE</th>
                                                         <th scope="col">TRANSACTION HASH</th>
-             
+
                                                     </tr>
                                                 </thead>
                                                 @foreach($data['withdraw_usd'] as $row)
-             
+
                                                     <tr>
                                                        <td >{{$loop->index+1}}</td>
-             
+
                                                         <td>
                                                          {{$row->wallet->wallet_name}}
                                                         </td>
                                                         <td>{{$row->created_at}}</td>
                                                         <td>{{$row->amount}}</td>
                                                          <td>{{$row->payable}}</td>
-             
+
                                                          <td>{{$row->wallet->wallet_no}}</td>
                                                          <td>
                                                          @if($row->status == 'awaiting')
@@ -155,15 +155,15 @@
                                                      @endif</td>
                                                         <td>{{$row->updated_at}}</td>
                                                         <td>{{$row->transaction_hash}}</td>
-             
+
                                                     </tr>
                                                      @include('user.modals.withdrawUsdConfirmationmodal')
                                                      @include('user.modals.withdrawUsdCancel')
-             
+
                                                     @endforeach
-             
-             
-             
+
+
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -209,6 +209,6 @@
             });
         </script>
 
-   
+
     @endpush
 @endsection

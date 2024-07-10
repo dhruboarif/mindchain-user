@@ -108,7 +108,7 @@
                                     <div class="transaction-status-wrap">
 
                                         <div class="transaction-table">
-                                            <table id="myTable" class="table table-bordered table-border">
+                                            <table id="myTable" class="">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>

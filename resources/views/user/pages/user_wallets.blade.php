@@ -31,7 +31,7 @@
                         @include('user.modals.wallet_addmodal')
                         <hr>
                         <div class="bd-example table-responsive">
-                               <table class="table table-bordered table-border">
+                               <table class="">
                                    <thead>
                                        <tr>
                                            <th scope="col">#</th>
