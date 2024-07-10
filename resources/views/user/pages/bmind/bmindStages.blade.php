@@ -34,7 +34,7 @@
                 </div>
                 </div>
                 @endif
-                             <!-- Content  section 
+                             <!-- Content  section
      ============================================  -->
                     <div class="bmind-page-staus mg-t-30  mg-b-30">
                         <div class="container-fluid">
@@ -144,7 +144,7 @@
                                     <div class="stage-title">
                                         <h3 class="text-left" >Bmind Stage List</h3>
                                     </div>
-                                    
+
                                     <div class="row mg-t-30 mg-b-30">
                                         @foreach($data['bmindstages'] as $row)
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 bmind-stage-list ">
@@ -205,17 +205,17 @@
                                                         </form>
 
                                                         @if($row->status == 'Active')
-                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bmindbuymodal{{$row->id}}" onclick="captureSelectedAmount('{{$row->title}}')">Buy B-Mind</button>
+                                                        <button type="button" class="bmind-btn mg-t-15" data-toggle="modal" data-target="#bmindbuymodal{{$row->id}}" onclick="captureSelectedAmount('{{$row->title}}')">Buy B-Mind</button>
                                                         @include('user.modals.bmind.bmindbuymodal')
                                                         @else
-                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#" disabled>Upcoming</button>
+                                                        <button type="button" class="bmind-btn mg-t-15" data-bs-toggle="modal" data-bs-target="#" disabled>Upcoming</button>
                                                         @endif
 
                                                     </div>
                                             </div>
                                         </div>
-                                        
-                                        
+
+
                                         @endforeach
                                     </div>
 
@@ -224,18 +224,18 @@
                             </div>
                         </div>
                     </div>
-                <!--Content    section 
+                <!--Content    section
                 ============================================  -->
                 </div>
-            </div>           
+            </div>
         </div>
     </div>
 
 
 
     @push('scripts')
-      
-      
+
+
 <script>
     function updateSelectedAmount(stageId) {
 
@@ -245,11 +245,11 @@
         var csrfToken = '{{ csrf_token() }}'; // Retrieve the CSRF token value
 
         var tokenBasePrice = document.getElementById('token_base_price_' + stageId).value;
-        
+
         // Calculate the total price
         var totalPrice = selectedAmount * tokenBasePrice;
         // Update the total price input
-        document.getElementById('total_price_' + stageId).value = totalPrice; 
+        document.getElementById('total_price_' + stageId).value = totalPrice;
 
         // Make an Ajax request to update the daily bonus based on the selected amount
         $.ajax({
@@ -269,7 +269,7 @@
             }
         });
     }
-    
+
 
 
 </script>
@@ -281,6 +281,6 @@
     }
 </script>
 
-   
+
     @endpush
 @endsection

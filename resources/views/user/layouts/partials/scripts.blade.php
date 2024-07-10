@@ -7,8 +7,9 @@
     <script src="{{asset('assetsnew/js/wow.min.js')}}"></script>
     <!-- price-slider JS
 		============================================ -->
-        
-	<script src="{{asset('assetsnew/js/countdown-timer.js')}}"></script>
+
+	{{-- <script src="{{asset('assetsnew/js/countdown-timer.js')}}"></script> --}}
+    <script src="https://cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js"></script>
     <!-- Timer counter js file
     ============================================ -->
     <script src="{{asset('assetsnew/js/jquery-price-slider.js')}}"></script>
@@ -56,7 +57,7 @@
 
     <!-- Backend Bundle JavaScript -->
 <script src="{{asset('assets/js/libs.min.js')}}"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $('.moreless-button').click(function () {
             $('.moretext').slideToggle();

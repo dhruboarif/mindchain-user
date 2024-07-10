@@ -11,14 +11,14 @@
             <div class="modal-body text-left">
               <p>Are you sure you want to Buy this B-Mind?</p>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer text-right">
+                <form id="jquery-val-form text-right" action="{{ route('buy-bmindnew') }}" method="post" style="display: flex; float:right;">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                <form id="jquery-val-form" action="{{ route('buy-bmindnew') }}" method="post">
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="bmind_id" value="{{ $row->id }}">
                     <input type="hidden" name="selected_amount" id="selected_amount" value="">
-                    <button type="submit" class="btn btn-primary">Confirm</button>
+                    <button type="submit" class="btn btn-primary" style="margin-left:10px">Confirm</button>
                 </form>
             </div>
           </div>

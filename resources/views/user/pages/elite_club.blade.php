@@ -313,14 +313,14 @@
                                         <button class="elite-btn" type="button">Already joined </button>
                                         @endif
 
-                                        <p class="mem-join-sec">USD Balance: {{ $data['sum_usdwallet'] }}</p>
+                                        <p class="mem-join-sec" >Deposit <del class="text-danger"><i>$1500</i></del> $1250 to become a Elite Club Member</p>
                                     </div>
                                     @include('user.modals.depositusdt')
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 mg-t-30">
                                 <div class="">
-                                    <div class="elite-content-card-content">
+                                    <div class="elite-content-card-content ">
                                         <svg class="right-arrow" style="width: 90px!important;" width="117"
                                             height="60" viewBox="0 0 117 60" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -400,7 +400,7 @@
                                             </div>
                                         </div>
 
-                                        <p class="mem-join-sec">USD Balance: {{ $data['sum_usdwallet'] }}</p>
+                                        <p class="mem-join-sec mg-b-30">USD Balance: {{ $data['sum_usdwallet'] }}</p>
                                     </div>
                                 </div>
                             </div>

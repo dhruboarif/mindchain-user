@@ -114,18 +114,7 @@ for (var i = 0; i < btns.length; i++) {
 }
 
 // Timer counter start
-$(document).ready(function () {
-	var myDate = new Date("july 28, 2024 15:37:25");
-	myDate.setDate(myDate.getDate());
-	$("#countdown").countdown(myDate, function (event) {
-		$(this).html(
-			event.strftime(
-				'<div class="timer-wrapper"><div class="time">%D</div><span class="text">D</span></div><div class="timer-wrapper"><div class="time">%H</div><span class="text">H</span></div><div class="timer-wrapper"><div class="time">%M</div><span class="text">M</span></div><div class="timer-wrapper"><div class="time">%S</div><span class="text">S</span></div>'
-			)
-		);
-	});
-
-});// Timer counter end
+// Timer counter end
 
 // copy url
 function copyURL() {

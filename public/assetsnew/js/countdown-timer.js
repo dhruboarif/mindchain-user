@@ -7,7 +7,7 @@
             defer: false
         };
 
-    /* 
+    /*
      * Countdown Timer Class Definition
      */
     var Countdown = function (el, finalDate, options) {
@@ -34,7 +34,7 @@
         }
     };
 
-    /* 
+    /*
      * Countdown Timer Methods
      */
     Countdown.prototype.start = function () {
@@ -131,7 +131,7 @@
     }
 
 
-    /* 
+    /*
      * Utility Functions
      */
     function parseDateString(dateString) {
@@ -214,7 +214,7 @@
         }
     }
 
-    /* 
+    /*
      * Countdown Timer Plugin Definition
      */
     $.fn.countdown = function () {
